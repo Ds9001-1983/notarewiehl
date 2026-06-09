@@ -1,0 +1,22 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import SubpageLinks from '@/components/SubpageLinks.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('seiten', 'datenschutz');
+const Content = entry ? (await render(entry)).Content : null;
+
+const items = [
+  { label: 'Allgemein', href: '/SONSTIGES/Datenschutz/Allgemein/', desc: 'Allgemeine Datenschutzhinweise.' },
+  { label: 'Website', href: '/SONSTIGES/Datenschutz/Website/', desc: 'Datenverarbeitung beim Besuch dieser Website.' },
+  { label: 'Verantwortliche', href: '/verantwortliche/', desc: 'Verantwortliche Stellen und Datenschutzbeauftragter.' },
+];
+---
+
+<TextPageLayout
+  title="Datenschutz"
+  description="Datenschutzinformationen der Notare Dr. Tim Kasper und Philip Scholz in Wiehl."
+>
+  {Content ? <Content /> : <p>Informationen zum Datenschutz in unserer Kanzlei.</p>}
+  <SubpageLinks items={items} />
+</TextPageLayout>

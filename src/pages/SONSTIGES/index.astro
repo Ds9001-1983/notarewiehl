@@ -1,0 +1,18 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import SubpageLinks from '@/components/SubpageLinks.astro';
+
+const items = [
+  { label: 'Datenschutz', href: '/SONSTIGES/Datenschutz/', desc: 'Informationen zur Verarbeitung Ihrer personenbezogenen Daten.' },
+  { label: 'Verantwortliche', href: '/verantwortliche/', desc: 'Verantwortliche Stellen und Datenschutzbeauftragter.' },
+  { label: 'Geldwäsche-Prävention', href: '/SONSTIGES/Geldwaesche-Praevention/', desc: 'Gesetzliche Pflichten nach dem Geldwäschegesetz.' },
+];
+---
+
+<TextPageLayout
+  title="Sonstiges"
+  description="Weitere Informationen: Datenschutz, Verantwortliche und Geldwäsche-Prävention der Notare Wiehl."
+>
+  <p>Hier finden Sie weitere rechtliche Informationen rund um unsere Kanzlei.</p>
+  <SubpageLinks items={items} />
+</TextPageLayout>

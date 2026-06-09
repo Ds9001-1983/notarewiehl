@@ -1,0 +1,23 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import LeistungenGrid from '@/components/LeistungenGrid.astro';
+---
+
+<TextPageLayout
+  title="Leistungen"
+  description="Unsere notariellen Tätigkeitsbereiche im Überblick – von Immobilien über Erb- und Familienrecht bis zu Gesellschaften, Vereinen und Vorsorge."
+  lead="Als Notare üben wir ein öffentliches Amt aus und beraten Sie unabhängig und unparteiisch. Nachfolgend finden Sie unsere Tätigkeitsbereiche und Leistungen."
+>
+  <p>
+    Wählen Sie einen Bereich, um mehr über Ablauf, Gestaltungsmöglichkeiten und das
+    Beurkundungsverfahren zu erfahren. Bei Fragen
+    <a href="/KONTAKT/">kontaktieren Sie uns</a> gerne – eine persönliche Beratung erfolgt
+    ausschließlich nach vorheriger Terminvereinbarung.
+  </p>
+
+  <section slot="after" class="section section--subtle">
+    <div class="container">
+      <LeistungenGrid eyebrow="Tätigkeitsbereiche" heading="Alle Leistungen im Überblick" />
+    </div>
+  </section>
+</TextPageLayout>

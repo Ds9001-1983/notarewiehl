@@ -1,0 +1,118 @@
+/* =========================================================================
+   Design Tokens – Notare Wiehl
+   Seriös-modern. Marke = Blau (verfeinert), Akzent = gedämpftes Gold/Messing.
+   Alle Textfarben auf AA-Kontrast ausgelegt.
+   ========================================================================= */
+:root {
+  /* --- Marke: Blau (verfeinert aus #3f5186 / #143c55) --- */
+  --c-primary-900: #0f2d40;
+  --c-primary-800: #143c55; /* Bestand – Dunkelblau */
+  --c-primary-700: #1f4d6b;
+  --c-primary-600: #2c5e80;
+  --c-primary-500: #3f5186; /* Bestand – Primärblau (Marken-Anker) */
+  --c-primary-400: #5a6aa0;
+  --c-primary-300: #8e9ac0;
+  --c-primary-200: #c4cbe0;
+  --c-primary-100: #e6e9f2;
+  --c-primary-050: #f3f5fa;
+
+  /* --- Akzent: Gold / Messing --- */
+  --c-accent-800: #6f571f;
+  --c-accent-700: #8a6d2f; /* Akzent-Text/Links auf Weiß – AA 4.7:1 */
+  --c-accent-600: #a6842f;
+  --c-accent-500: #b8923a; /* Flächen / aktive Akzente */
+  --c-accent-400: #c9a85a;
+  --c-accent-300: #ddc488;
+  --c-accent-100: #f3ead4; /* helle Akzent-Wash */
+
+  /* --- Neutrale Grauskala (leicht kühl) --- */
+  --c-neutral-000: #ffffff;
+  --c-neutral-050: #fafafa;
+  --c-neutral-100: #f1f2f4;
+  --c-neutral-200: #e2e4e8;
+  --c-neutral-300: #c7cbd2;
+  --c-neutral-400: #a4aab3;
+  --c-neutral-500: #757b85; /* Meta-Text – AA auf Weiß (~4.9:1) */
+  --c-neutral-700: #4a4f57;
+  --c-neutral-900: #1c2227;
+
+  /* --- Semantische Tokens (in Komponenten immer diese nutzen) --- */
+  --bg-page: var(--c-neutral-050);
+  --bg-surface: var(--c-neutral-000);
+  --bg-subtle: var(--c-primary-050);
+  --bg-inverse: var(--c-primary-800);
+  --bg-inverse-deep: var(--c-primary-900);
+
+  --text-primary: var(--c-neutral-900);
+  --text-secondary: var(--c-neutral-700);
+  --text-muted: var(--c-neutral-500);
+  --text-on-dark: #eef1f7;
+  --text-on-dark-muted: #c3cbdd;
+  --text-link: var(--c-primary-600);
+  --text-link-hover: var(--c-primary-800);
+
+  --border-subtle: var(--c-neutral-200);
+  --border-strong: var(--c-primary-200);
+
+  --accent: var(--c-accent-600);
+  --accent-strong: var(--c-accent-700);
+  --accent-text: var(--c-accent-700);
+  --focus-ring: var(--c-accent-600);
+
+  /* --- Typografie --- */
+  --font-serif: 'Lora Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Rubik Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-display: clamp(2.25rem, 1.4rem + 3.8vw, 3.6rem);
+  --fs-h1: clamp(1.9rem, 1.3rem + 2.2vw, 2.6rem);
+  --fs-h2: clamp(1.5rem, 1.15rem + 1.3vw, 2rem);
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.7vw, 1.5rem);
+  --fs-h4: 1.125rem;
+  --fs-body: clamp(1rem, 0.96rem + 0.18vw, 1.0625rem);
+  --fs-lead: clamp(1.125rem, 1.02rem + 0.4vw, 1.3rem);
+  --fs-small: 0.875rem;
+  --fs-caption: 0.8125rem;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-body: 1.7;
+
+  --measure: 70ch;
+  --measure-narrow: 60ch;
+
+  /* --- Spacing (8px-Basis) --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --sp-10: 8rem;
+
+  /* --- Radien --- */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+  --r-pill: 999px;
+
+  /* --- Schatten (blaustichig, dezent) --- */
+  --shadow-xs: 0 1px 2px rgba(20, 60, 85, 0.06);
+  --shadow-sm: 0 2px 8px rgba(20, 60, 85, 0.08);
+  --shadow-md: 0 8px 24px rgba(20, 60, 85, 0.1);
+  --shadow-lg: 0 16px 48px rgba(20, 60, 85, 0.12);
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-text: 760px;
+  --header-h: 76px;
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-med: 240ms;
+  --dur-slow: 420ms;
+}

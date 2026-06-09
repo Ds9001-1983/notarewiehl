@@ -1,0 +1,121 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHead from '@/components/PageHead.astro';
+import { downloadGroups } from '@/data/downloads';
+import { kontakt } from '@/data/kontakt';
+---
+
+<BaseLayout
+  title="Formulare & Downloads"
+  description="Online-Formulare und Download-Dokumente der Notare Wiehl zur Vorbereitung Ihrer Urkunde – sicher, bequem und papierlos."
+>
+  <PageHead title="Formulare & Downloads" />
+
+  <section class="section">
+    <div class="container fd">
+      <div class="prose fd__intro">
+        <h2>Online-Formulare</h2>
+        <p>
+          Wir möchten Ihr Anliegen schnell und rechtssicher umsetzen. Hierfür benötigen wir einige
+          Angaben von Ihnen. Nutzen Sie am besten unsere Online-Formulare. Dadurch ist
+          sichergestellt, dass wir alle erforderlichen Daten erhalten – sicher, bequem und papierlos.
+        </p>
+        <p>
+          <a class="btn btn--gold" href={kontakt.onlineFormulareUrl} target="_blank" rel="noopener noreferrer">
+            Zum Online-Formularbereich
+            <span class="visually-hidden"> (öffnet in neuem Fenster)</span> &rsaquo;
+          </a>
+        </p>
+        <p>
+          Offene Fragen hierzu können wir gerne telefonisch oder in einem persönlichen Gespräch
+          klären. Bitte beachten Sie, dass Sie ein Beurkundungsverfahren einleiten, wenn Sie einen
+          Auftrag zur Erstellung eines Urkundenentwurfs erteilen, und dass für die auftragsgemäße
+          Vorbereitung einer Beurkundung in erheblichem Umfang Gebühren und Kosten anfallen können,
+          auch wenn es letztlich nicht zur Beurkundung kommt (nähere Infos
+          <a href="/LEISTUNGEN/Beratung-und-weiteres-Verfahren/">hier</a>).
+        </p>
+      </div>
+
+      <div class="fd__downloads">
+        <h2>Downloads</h2>
+        <p class="fd__lead">
+          Hier stehen zusätzlich Dokumente zum Download bereit, die zur Vorbereitung und Abwicklung
+          von Urkunden sowie zu Ihrer Information dienen. Die Formulare können Sie herunterladen,
+          ausfüllen und postalisch oder als Scan-Kopie per E-Mail an uns übersenden.
+        </p>
+
+        {
+          downloadGroups.map((group) => (
+            <div class="dl-group">
+              <h3>{group.heading}</h3>
+              {group.intro && <p class="dl-group__intro">{group.intro}</p>}
+              <ul class="dl-list">
+                {group.items.map((item) => (
+                  <li>
+                    <a class="dl-item" href={item.file} download>
+                      <span class="dl-item__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="26" height="26">
+                          <path d="M12 3v10m0 0l-4-4m4 4l4-4M5 17v2a2 2 0 002 2h10a2 2 0 002-2v-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span class="dl-item__text">
+                        <span class="dl-item__title">{item.title}</span>
+                        <span class="dl-item__desc">{item.desc}</span>
+                      </span>
+                      <span class="dl-item__meta">PDF · {item.sizeLabel}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .fd { max-width: var(--container-text); }
+  .fd__lead { color: var(--text-secondary); margin-bottom: var(--sp-5); }
+  .fd__downloads { margin-top: var(--sp-7); }
+  .dl-group { margin-bottom: var(--sp-6); }
+  .dl-group h3 {
+    color: var(--c-primary-800);
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: var(--sp-3);
+  }
+  .dl-group__intro { color: var(--text-muted); font-size: 0.95rem; margin-bottom: var(--sp-4); }
+  .dl-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
+  .dl-item {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+    padding: var(--sp-4);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-md);
+    text-decoration: none;
+    transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+  }
+  .dl-item:hover { border-color: var(--c-primary-300); box-shadow: var(--shadow-sm); }
+  .dl-item__icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--r-md);
+    background: var(--c-primary-050);
+    color: var(--c-primary-600);
+  }
+  .dl-item__text { flex: 1; min-width: 0; }
+  .dl-item__title { display: block; font-weight: 600; color: var(--text-primary); }
+  .dl-item__desc { display: block; font-size: 0.9rem; color: var(--text-muted); }
+  .dl-item__meta { flex: 0 0 auto; font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+  @media (max-width: 540px) {
+    .dl-item { flex-wrap: wrap; }
+    .dl-item__meta { width: 100%; padding-left: calc(46px + var(--sp-4)); }
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import { kontakt } from '../data/kontakt';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+const { title, description = kontakt.tagline, image = '/og-image.jpg', noindex = false } = Astro.props;
+
+const brand = 'Notare Dr. Tim Kasper & Philip Scholz';
+const seoTitle = title.toLowerCase().includes('notar') ? title : `${title} – ${brand}, Wiehl`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+
+// Notariat-Struktur als JSON-LD (LocalBusiness/LegalService)
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Notary',
+  name: kontakt.kanzlei,
+  url: Astro.site?.toString(),
+  email: kontakt.email,
+  telephone: kontakt.telefonAnzeige,
+  faxNumber: kontakt.faxAnzeige,
+  image: ogImage.toString(),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: kontakt.strasse,
+    postalCode: kontakt.plz,
+    addressLocality: kontakt.ort,
+    addressCountry: 'DE',
+  },
+  areaServed: 'Wiehl',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Thursday'],
+      opens: '09:00',
+      closes: '17:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Friday'],
+      opens: '09:00',
+      closes: '12:00',
+    },
+  ],
+};
+---
+
+<title>{seoTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content={brand} />
+<meta property="og:title" content={seoTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

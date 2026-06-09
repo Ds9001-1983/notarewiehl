@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.notare-wiehl.de/sitemap-index.xml

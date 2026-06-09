@@ -1,0 +1,105 @@
+---
+import { Image } from 'astro:assets';
+import { leistungen } from '../data/navigation';
+
+interface Props {
+  exclude?: string;
+  heading?: string;
+  eyebrow?: string;
+}
+const { exclude, heading, eyebrow } = Astro.props;
+
+const iconModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/icons/icon-*.png',
+  { eager: true }
+);
+const icon = (key?: string) =>
+  key ? iconModules[`../assets/icons/icon-${key}.png`]?.default : undefined;
+
+const items = leistungen.filter((l) => l.href !== exclude);
+---
+
+<section class="leistungen" data-reveal>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  {heading && <h2 class="leistungen__head">{heading}</h2>}
+  <ul class="leistungen__grid">
+    {
+      items.map((l) => (
+        <li>
+          <a class="lcard" href={l.href}>
+            {icon(l.icon) && (
+              <span class="lcard__icon">
+                <Image src={icon(l.icon)!} alt="" width={48} height={48} />
+              </span>
+            )}
+            <span class="lcard__title">{l.label}</span>
+            {l.desc && <span class="lcard__desc">{l.desc}</span>}
+            <span class="lcard__more" aria-hidden="true">Mehr erfahren →</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .leistungen__head {
+    margin-bottom: var(--sp-5);
+  }
+  .leistungen__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+  .lcard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--sp-5);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition:
+      transform var(--dur-fast) var(--ease-out),
+      box-shadow var(--dur-fast) var(--ease-out),
+      border-color var(--dur-fast) var(--ease-out);
+  }
+  .lcard:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--c-primary-300);
+  }
+  .lcard__icon {
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: var(--r-md);
+    background: var(--c-primary-050);
+    margin-bottom: var(--sp-4);
+  }
+  .lcard__icon img { width: 38px; height: 38px; }
+  .lcard__title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--c-primary-800);
+    margin-bottom: 0.35rem;
+  }
+  .lcard__desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .lcard__more {
+    margin-top: auto;
+    padding-top: var(--sp-4);
+    color: var(--accent-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import { kontakt } from '../data/kontakt';
+import { leistungen, footerNav } from '../data/navigation';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <p class="footer__name">Notare<br />Dr. Tim Kasper &amp; Philip Scholz</p>
+      <p class="footer__tagline">{kontakt.tagline}</p>
+      <address class="footer__address">
+        {kontakt.strasse}<br />
+        {kontakt.plz} {kontakt.ort}<br />
+        <a href={kontakt.telefonLink}>Tel.: {kontakt.telefonAnzeige}</a><br />
+        <span>Fax: {kontakt.faxAnzeige}</span><br />
+        <a href={kontakt.emailLink}>{kontakt.email}</a>
+      </address>
+    </div>
+
+    <nav class="footer__col" aria-label="Leistungen">
+      <h2 class="footer__head">Leistungen</h2>
+      <ul>
+        {leistungen.slice(0, 8).map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Service">
+      <h2 class="footer__head">Service</h2>
+      <ul>
+        {footerNav.service.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Rechtliches">
+      <h2 class="footer__head">Rechtliches</h2>
+      <ul>
+        {footerNav.rechtliches.map((l) => (
+          <li><a href={l.href}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer__bar">
+    <div class="container footer__bar-inner">
+      <p>© {year} {kontakt.kanzlei}</p>
+      <ul>
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/KONTAKT/">Kontakt</a></li>
+        <li><a href="/SONSTIGES/Datenschutz/Website/">Datenschutz</a></li>
+        <li><a href="/KONTAKT/Impressum/">Impressum</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--bg-inverse-deep);
+    color: var(--text-on-dark-muted);
+    border-top: 2px solid var(--accent);
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: var(--sp-6) var(--sp-5);
+    padding-block: var(--sp-8) var(--sp-7);
+  }
+  .footer__name {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: var(--sp-3);
+  }
+  .footer__tagline {
+    font-size: 0.95rem;
+    margin-bottom: var(--sp-4);
+    max-width: 34ch;
+  }
+  .footer__address {
+    font-style: normal;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  .footer__address a {
+    color: var(--c-accent-300);
+    text-decoration: none;
+  }
+  .footer__address a:hover { text-decoration: underline; }
+
+  .footer__head {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: var(--sp-4);
+  }
+  .footer__col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .footer__col a {
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+    font-size: 0.92rem;
+  }
+  .footer__col a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .footer__bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .footer__bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    padding-block: var(--sp-4);
+    font-size: 0.85rem;
+  }
+  .footer__bar-inner ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer__bar-inner a {
+    color: var(--text-on-dark-muted);
+    text-decoration: none;
+  }
+  .footer__bar-inner a:hover { color: #fff; }
+
+  @media (max-width: 900px) {
+    .footer__grid { grid-template-columns: 1fr 1fr; }
+    .footer__brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .footer__grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,18 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import LeistungenGrid from '@/components/LeistungenGrid.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('leistungen', 'isolierte-beratung');
+if (!entry) throw new Error('Fehlender Inhalt: leistungen/isolierte-beratung');
+const { Content } = await render(entry);
+---
+
+<TextPageLayout title={entry.data.title} description={entry.data.description} lead={entry.data.lead}>
+  <Content />
+  <section slot="after" class="section section--subtle">
+    <div class="container">
+      <LeistungenGrid exclude={Astro.url.pathname} eyebrow="Weitere Bereiche" heading="Weitere Leistungen" />
+    </div>
+  </section>
+</TextPageLayout>

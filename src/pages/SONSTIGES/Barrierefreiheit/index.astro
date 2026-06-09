@@ -1,0 +1,46 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import { kontakt } from '@/data/kontakt';
+---
+
+<TextPageLayout
+  title="Erklärung zur Barrierefreiheit"
+  description="Erklärung zur Barrierefreiheit der Website der Notare Dr. Tim Kasper und Philip Scholz in Wiehl gemäß BFSG."
+>
+  <p>
+    Die Notare Dr. Tim Kasper und Philip Scholz sind bemüht, ihre Website im Einklang mit dem
+    Barrierefreiheitsstärkungsgesetz (BFSG) sowie den Web Content Accessibility Guidelines
+    (WCAG) 2.1 in der Stufe AA barrierefrei zugänglich zu machen.
+  </p>
+
+  <h2>Stand der Vereinbarkeit mit den Anforderungen</h2>
+  <p>
+    Diese Website ist mit den Anforderungen der WCAG 2.1 auf Stufe AA weitgehend vereinbar.
+    Sie wurde im Juni 2026 neu erstellt und dabei durchgängig auf Barrierefreiheit ausgelegt
+    (u. a. Tastaturbedienbarkeit, ausreichende Farbkontraste, sinnvolle Dokumentstruktur,
+    Alternativtexte und Berücksichtigung von „prefers-reduced-motion“).
+  </p>
+  <p>
+    Einzelne, von Dritten bereitgestellte Inhalte (z. B. das externe Online-Formularsystem oder
+    verlinkte Register) liegen außerhalb unseres Einflussbereichs.
+  </p>
+
+  <h2>Barrieren melden: Kontakt</h2>
+  <p>
+    Sind Ihnen Mängel beim barrierefreien Zugang zu Inhalten dieser Website aufgefallen oder haben
+    Sie Fragen zur Barrierefreiheit? Bitte teilen Sie uns dies mit:
+  </p>
+  <ul>
+    <li>E-Mail: <a href={kontakt.emailLink}>{kontakt.email}</a></li>
+    <li>Telefon: <a href={kontakt.telefonLink}>{kontakt.telefonAnzeige}</a></li>
+    <li>Postanschrift: {kontakt.kanzlei}, {kontakt.strasse}, {kontakt.plz} {kontakt.ort}</li>
+  </ul>
+
+  <h2>Durchsetzungsverfahren</h2>
+  <p>
+    Sollten Sie auf Ihre Anfrage keine zufriedenstellende Antwort erhalten, können Sie sich an die
+    zuständige Marktüberwachungsstelle für Barrierefreiheit wenden.
+  </p>
+
+  <p><em>Diese Erklärung wurde am 9. Juni 2026 erstellt.</em></p>
+</TextPageLayout>

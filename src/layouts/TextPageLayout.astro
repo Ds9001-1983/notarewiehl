@@ -1,0 +1,34 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHead from '../components/PageHead.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lead?: string;
+  image?: string;
+  /** Inhalt mittig + schmal (Lesetexte) statt volle Breite */
+  narrow?: boolean;
+}
+const { title, description, lead, image, narrow = true } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <PageHead title={title} lead={lead} />
+
+  <div class="section">
+    <div class="container">
+      <div class:list={['page-body', { narrow }]}>
+        <article class="prose"><slot /></article>
+      </div>
+    </div>
+  </div>
+  <slot name="after" />
+</BaseLayout>
+
+<style>
+  .page-body.narrow {
+    max-width: var(--container-text);
+    margin-inline: auto;
+  }
+</style>

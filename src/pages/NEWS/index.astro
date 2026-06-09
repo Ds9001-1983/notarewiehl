@@ -1,0 +1,34 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+---
+
+<TextPageLayout
+  title="News"
+  description="Aktuelle Hinweise und Neuigkeiten der Notare Dr. Tim Kasper und Philip Scholz in Wiehl."
+>
+  <div class="news-empty">
+    <p class="news-empty__icon" aria-hidden="true">📰</p>
+    <h2>Aktuell liegen keine Meldungen vor.</h2>
+    <p>
+      Hier informieren wir Sie künftig über Neuigkeiten aus unserer Kanzlei. Schauen Sie gerne
+      wieder vorbei – oder
+      <a href="/KONTAKT/">nehmen Sie Kontakt mit uns auf</a>.
+    </p>
+    <p>
+      <a class="btn btn--primary" href="/LEISTUNGEN/">Zu unseren Leistungen</a>
+    </p>
+  </div>
+</TextPageLayout>
+
+<style>
+  .news-empty {
+    text-align: center;
+    padding-block: var(--sp-6);
+  }
+  .news-empty__icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--sp-3);
+  }
+  .news-empty h2 { margin-bottom: var(--sp-3); }
+  .news-empty p { color: var(--text-secondary); margin-bottom: var(--sp-4); }
+</style>

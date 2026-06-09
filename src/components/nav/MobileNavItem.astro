@@ -1,0 +1,103 @@
+---
+import type { NavNode } from '../../data/navigation';
+import Self from './MobileNavItem.astro';
+
+interface Props {
+  node: NavNode;
+  current: string;
+  depth?: number;
+}
+const { node, current, depth = 0 } = Astro.props;
+const hasChildren = !!node.children?.length;
+const norm = (p: string) => (p.endsWith('/') || /\.[a-z0-9]+$/i.test(p) ? p : p + '/');
+const isCurrent = norm(node.href) === current;
+const id = 'm' + node.href.replace(/[^a-z0-9]+/gi, '-');
+---
+
+<li class="mnav__item">
+  {
+    hasChildren ? (
+      <>
+        <div class="mnav__row">
+          <a class="mnav__link" href={node.href} aria-current={isCurrent ? 'page' : undefined}>
+            {node.label}
+          </a>
+          <button
+            class="mnav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls={id}
+            data-mtoggle
+          >
+            <span class="visually-hidden">Untermenü {node.label} anzeigen</span>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+              <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <ul class="mnav__sub" id={id} hidden>
+          {node.children!.map((c) => <Self node={c} current={current} depth={depth + 1} />)}
+        </ul>
+      </>
+    ) : (
+      <a class="mnav__link" href={node.href} aria-current={isCurrent ? 'page' : undefined}>
+        {node.label}
+      </a>
+    )
+  }
+</li>
+
+<style>
+  .mnav__item {
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .mnav__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mnav__link {
+    display: block;
+    flex: 1;
+    padding: 0.85rem 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .mnav__link[aria-current='page'] {
+    color: var(--c-primary-700);
+    font-weight: 600;
+  }
+  .mnav__toggle {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    border-left: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+  }
+  .mnav__toggle svg {
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+  .mnav__toggle[aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+  .mnav__sub {
+    list-style: none;
+    margin: 0 0 0.4rem 0.4rem;
+    padding-left: var(--sp-4);
+    border-left: 2px solid var(--c-primary-100);
+  }
+  .mnav__sub .mnav__link {
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding-block: 0.7rem;
+  }
+  .mnav__sub .mnav__item:last-child {
+    border-bottom: none;
+  }
+</style>

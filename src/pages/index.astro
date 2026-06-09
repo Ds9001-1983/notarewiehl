@@ -1,0 +1,198 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LeistungenGrid from '@/components/LeistungenGrid.astro';
+import { kontakt } from '@/data/kontakt';
+import titelbild from '@/assets/images/titelbild.jpg';
+import haus from '@/assets/images/haus-schmitz.jpg';
+---
+
+<BaseLayout
+  title="Notar in Wiehl | Notare Dr. Tim Kasper und Philip Scholz"
+  description="Notare Dr. Tim Kasper und Philip Scholz in Wiehl – beratend und rechtsgestaltend in allen notariellen Aufgabengebieten. Beratung ausschließlich nach Terminvereinbarung."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__media">
+      <Image src={titelbild} alt="" widths={[768, 1280, 1920]} sizes="100vw" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">Notariat in Wiehl</p>
+      <h1 class="hero__title">„Wir sind für Sie da&nbsp;– fachkundig, pflichtbewusst und serviceorientiert.“</h1>
+      <p class="hero__sub">Ihre Notare in Wiehl – Dr.&nbsp;Tim&nbsp;Kasper &amp; Philip&nbsp;Scholz.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="/KONTAKT/">Termin &amp; Kontakt</a>
+        <a class="btn btn--on-dark" href="/LEISTUNGEN/">Unsere Leistungen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Begrüßung -->
+  <section class="section">
+    <div class="container welcome" data-reveal>
+      <div class="welcome__text">
+        <p class="eyebrow">Herzlich willkommen</p>
+        <h2>Herzlich willkommen bei den Notaren in Wiehl</h2>
+        <p>
+          Die Notare <strong>Dr.&nbsp;Tim&nbsp;Kasper</strong> und <strong>Philip&nbsp;Scholz</strong>
+          stehen Ihnen in Wiehl gerne in allen notariellen Aufgabengebieten beratend und
+          rechtsgestaltend zur Seite.
+        </p>
+        <p>
+          Eine persönliche Beratung erfolgt ausschließlich nach vorheriger Terminvereinbarung.
+          Für die Vorbereitung nutzen Sie bequem unsere
+          <a href="/FORMULARE-DOWNLOADS/">Formulare &amp; Online-Formulare</a>.
+        </p>
+        <div class="welcome__actions">
+          <a class="btn btn--primary" href="/UeBER-UNS/">Über die Kanzlei</a>
+          <a class="btn btn--ghost" href="/LEISTUNGEN/Notarkosten/">Notarkosten</a>
+        </div>
+      </div>
+      <div class="welcome__media">
+        <Image src={haus} alt="Kanzleigebäude der Notare in Wiehl, Hauptstraße 41" widths={[480, 720, 960]} sizes="(min-width: 900px) 440px, 100vw" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section class="section section--subtle">
+    <div class="container">
+      <LeistungenGrid eyebrow="Tätigkeitsbereiche" heading="Unsere notariellen Leistungen" />
+    </div>
+  </section>
+
+  <!-- Kontakt-Streifen -->
+  <section class="section section--inverse on-dark">
+    <div class="container kstrip" data-reveal>
+      <div class="kstrip__intro">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Gerne nehmen wir uns Zeit für Sie.</h2>
+        <p>Rufen Sie uns an oder schreiben Sie uns – wir koordinieren Ihren Termin.</p>
+        <div class="kstrip__cta">
+          <a class="btn btn--gold" href={kontakt.telefonLink}>{kontakt.telefonAnzeige}</a>
+          <a class="btn btn--on-dark" href="/KONTAKT/">Anfahrt &amp; Kontakt</a>
+        </div>
+      </div>
+      <div class="kstrip__hours">
+        <h3>Telefonzeiten</h3>
+        <dl>
+          {kontakt.telefonzeiten.map((z) => (
+            <>
+              <dt>{z.tage}</dt>
+              <dd>{z.zeit}</dd>
+            </>
+          ))}
+        </dl>
+        <p class="kstrip__note">Mittwoch: kein Kundenverkehr. Persönliche Beratung nur nach Terminvereinbarung.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: clamp(440px, 64vh, 660px);
+    color: #fff;
+    isolation: isolate;
+  }
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+  }
+  .hero__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      105deg,
+      rgba(15, 45, 64, 0.92) 0%,
+      rgba(20, 60, 85, 0.78) 45%,
+      rgba(20, 60, 85, 0.35) 100%
+    );
+  }
+  .hero__content {
+    padding-block: var(--sp-8);
+  }
+  .hero__eyebrow {
+    font-size: var(--fs-small);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-accent-300);
+    margin-bottom: var(--sp-4);
+  }
+  .hero__title {
+    color: #fff;
+    max-width: 18ch;
+    font-size: var(--fs-display);
+  }
+  .hero__sub {
+    margin-top: var(--sp-4);
+    max-width: 42ch;
+    font-size: var(--fs-lead);
+    color: var(--text-on-dark);
+  }
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+    margin-top: var(--sp-6);
+  }
+
+  /* Welcome */
+  .welcome {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: var(--sp-7);
+    align-items: center;
+  }
+  .welcome__text h2 { margin-bottom: var(--sp-4); }
+  .welcome__text p { color: var(--text-secondary); margin-bottom: var(--sp-4); max-width: 56ch; }
+  .welcome__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-5); }
+  .welcome__media :global(img) {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Kontakt-Streifen */
+  .kstrip {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--sp-7);
+    align-items: center;
+  }
+  .kstrip__intro h2 { margin-bottom: var(--sp-3); }
+  .kstrip__intro p { color: var(--text-on-dark-muted); max-width: 46ch; }
+  .kstrip__cta { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-5); }
+  .kstrip__hours {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--r-lg);
+    padding: var(--sp-5);
+  }
+  .kstrip__hours h3 { color: #fff; margin-bottom: var(--sp-4); }
+  .kstrip__hours dl { margin: 0; }
+  .kstrip__hours dt { font-weight: 600; color: #fff; margin-top: 0.6rem; }
+  .kstrip__hours dd { margin: 0; color: var(--text-on-dark-muted); }
+  .kstrip__note { margin-top: var(--sp-4); font-size: var(--fs-small); color: var(--c-accent-300); }
+
+  @media (max-width: 860px) {
+    .welcome,
+    .kstrip { grid-template-columns: 1fr; }
+    .welcome__media { order: -1; }
+  }
+</style>

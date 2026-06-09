@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageHead from '@/components/PageHead.astro';
+import KontaktBlock from '@/components/KontaktBlock.astro';
+import KarteBlock from '@/components/KarteBlock.astro';
+import { kontakt } from '@/data/kontakt';
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="So erreichen Sie die Notare Dr. Tim Kasper und Philip Scholz in Wiehl: Adresse, Telefonzeiten, E-Mail und Anfahrt. Persönliche Beratung nach Terminvereinbarung."
+>
+  <PageHead
+    title="Kontakt"
+    lead="Sie können uns telefonisch, per E-Mail oder über das passende Online-Formular erreichen. Wir freuen uns auf Ihre Nachricht."
+  />
+
+  <section class="section">
+    <div class="container">
+      <KontaktBlock />
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container kontakt-info">
+      <div class="prose">
+        <h2>Telefonische Erreichbarkeit</h2>
+        <p>
+          Eine offene Sprechstunde sowie eine durchgehende Telefon-Hotline bieten wir nicht an.
+          Die telefonische Erreichbarkeit ist auf feste Zeiten beschränkt. Hintergrund ist die
+          strukturierte Bearbeitung der täglich eingehenden rechtlichen Vorgänge und laufenden
+          Verfahren, die eine sorgfältige Vorbereitung sowie eine Zuordnung zum jeweils
+          zuständigen Sachbearbeitungsbereich erfordern.
+        </p>
+        <p>{kontakt.rueckfragen}</p>
+        <h2>Öffnungszeiten</h2>
+        <dl class="oeffnung">
+          {kontakt.oeffnungszeiten.map((z) => (
+            <div class="oeffnung__row">
+              <dt>{z.tage}</dt>
+              <dd>{z.zeit}</dd>
+            </div>
+          ))}
+        </dl>
+        <h2>Alternative Kontaktwege</h2>
+        <p>
+          Außerhalb der Telefonzeiten erreichen Sie uns jederzeit per
+          <a href={kontakt.emailLink}>E-Mail</a> oder über das passende
+          <a href={kontakt.onlineFormulareUrl} target="_blank" rel="noopener noreferrer">
+            Online-Formular<span class="visually-hidden"> (öffnet in neuem Fenster)</span></a>.
+          Bitte geben Sie – soweit möglich – eine Rückrufnummer an.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="anfahrt-head">Hier finden Sie uns</h2>
+      <div class="anfahrt">
+        <KarteBlock />
+        <div class="anfahrt__umzug">
+          <p class="eyebrow">Hinweis</p>
+          <h3>Wir sind umgezogen</h3>
+          <p>
+            Seit Mai 2024 finden Sie uns in der {kontakt.strasse}, {kontakt.plz} {kontakt.ort}.
+          </p>
+          <a class="btn btn--ghost" href="/UeBER-UNS/Umzug/">Weitere Informationen zur Anfahrt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .kontakt-info .prose { max-width: var(--container-text); }
+  .oeffnung { margin: 0; }
+  .oeffnung__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .oeffnung dt { font-weight: 600; color: var(--text-primary); }
+  .oeffnung dd { margin: 0; color: var(--text-secondary); }
+
+  .anfahrt-head { margin-bottom: var(--sp-5); }
+  .anfahrt {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--sp-6);
+    align-items: center;
+  }
+  .anfahrt__umzug h3 { color: var(--c-primary-800); margin-bottom: var(--sp-3); }
+  .anfahrt__umzug p { color: var(--text-secondary); margin-bottom: var(--sp-4); }
+  @media (max-width: 860px) {
+    .anfahrt { grid-template-columns: 1fr; }
+  }
+</style>

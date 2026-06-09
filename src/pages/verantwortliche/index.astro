@@ -1,0 +1,12 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('seiten', 'verantwortliche');
+if (!entry) throw new Error('Fehlender Inhalt: seiten/verantwortliche');
+const { Content } = await render(entry);
+---
+
+<TextPageLayout title={entry.data.title} description={entry.data.description} lead={entry.data.lead}>
+  <Content />
+</TextPageLayout>

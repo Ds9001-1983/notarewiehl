@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import { kontakt } from '../data/kontakt';
+import karte from '../assets/images/kartenausschnitt.png';
+
+const query = encodeURIComponent(`${kontakt.strasse}, ${kontakt.plz} ${kontakt.ort}`);
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+---
+
+<figure class="karte">
+  <a class="karte__link" href={mapsUrl} target="_blank" rel="noopener noreferrer">
+    <Image src={karte} alt={`Kartenausschnitt mit dem Standort ${kontakt.strasse}, ${kontakt.plz} ${kontakt.ort}`} widths={[480, 960, 1280]} sizes="(min-width: 800px) 760px, 100vw" />
+    <span class="karte__badge">
+      In Google&nbsp;Maps öffnen
+      <span class="visually-hidden"> (öffnet in neuem Fenster)</span>
+    </span>
+  </a>
+  <figcaption>
+    Aus Datenschutzgründen binden wir keine Karte direkt ein. Mit Klick öffnen Sie die
+    Route bei Google&nbsp;Maps in einem neuen Fenster.
+  </figcaption>
+</figure>
+
+<style>
+  .karte {
+    margin: 0;
+  }
+  .karte__link {
+    position: relative;
+    display: block;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-subtle);
+  }
+  .karte__link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--dur-slow) var(--ease-out);
+  }
+  .karte__link:hover img {
+    transform: scale(1.03);
+  }
+  .karte__badge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--c-primary-800);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--r-pill);
+    box-shadow: var(--shadow-md);
+  }
+  .karte figcaption {
+    margin-top: var(--sp-3);
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .karte__link:hover img { transform: none; }
+  }
+</style>

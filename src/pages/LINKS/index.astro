@@ -1,0 +1,22 @@
+---
+import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import SubpageLinks from '@/components/SubpageLinks.astro';
+import { getEntry, render } from 'astro:content';
+
+const entry = await getEntry('seiten', 'links');
+const Content = entry ? (await render(entry)).Content : null;
+
+const items = [
+  { label: 'Register', href: '/LINKS/Register/', desc: 'Zentrale Register (z. B. Testaments- und Vorsorgeregister).' },
+  { label: 'Standesorganisationen', href: '/standesorganisationen/', desc: 'Notarkammern und Bundesnotarkammer.' },
+  { label: 'Weitere', href: '/weitere/', desc: 'Weitere nützliche Links und Informationen.' },
+];
+---
+
+<TextPageLayout
+  title="Links"
+  description="Nützliche Links: Register, Standesorganisationen und weitere Informationen rund um das Notariat."
+>
+  {Content ? <Content /> : <p>Eine Auswahl nützlicher Links rund um notarielle Themen.</p>}
+  <SubpageLinks items={items} />
+</TextPageLayout>

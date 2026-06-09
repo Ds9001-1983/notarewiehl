@@ -1,0 +1,82 @@
+---
+import { Image } from 'astro:assets';
+import { kontakt } from '../data/kontakt';
+import iconTelefon from '../assets/icons/icon-telefon.png';
+import iconStandort from '../assets/icons/icon-standort.png';
+import iconZeiten from '../assets/icons/icon-oeffnungszeiten.png';
+---
+
+<div class="kontakt-cards">
+  <div class="kcard">
+    <span class="kcard__icon"><Image src={iconStandort} alt="" width={40} height={40} /></span>
+    <h3 class="kcard__title">Standort</h3>
+    <address>
+      {kontakt.kanzlei}<br />
+      {kontakt.strasse}<br />
+      {kontakt.plz} {kontakt.ort}
+    </address>
+  </div>
+
+  <div class="kcard">
+    <span class="kcard__icon"><Image src={iconTelefon} alt="" width={40} height={40} /></span>
+    <h3 class="kcard__title">Telefon &amp; E-Mail</h3>
+    <p>
+      <a href={kontakt.telefonLink}>{kontakt.telefonAnzeige}</a><br />
+      <span class="muted">Fax: {kontakt.faxAnzeige}</span><br />
+      <a href={kontakt.emailLink}>{kontakt.email}</a>
+    </p>
+  </div>
+
+  <div class="kcard">
+    <span class="kcard__icon"><Image src={iconZeiten} alt="" width={40} height={40} /></span>
+    <h3 class="kcard__title">Telefonzeiten</h3>
+    <dl>
+      {kontakt.telefonzeiten.map((z) => (
+        <>
+          <dt>{z.tage}</dt>
+          <dd>{z.zeit}</dd>
+        </>
+      ))}
+    </dl>
+  </div>
+</div>
+
+<style>
+  .kontakt-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--sp-5);
+  }
+  .kcard {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-lg);
+    padding: var(--sp-5);
+    box-shadow: var(--shadow-sm);
+  }
+  .kcard__icon {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--r-md);
+    background: var(--c-primary-050);
+    margin-bottom: var(--sp-4);
+  }
+  .kcard__title {
+    font-size: 1.05rem;
+    margin-bottom: var(--sp-3);
+    color: var(--c-primary-800);
+  }
+  .kcard address {
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+  .kcard a { color: var(--text-link); text-decoration: none; }
+  .kcard a:hover { text-decoration: underline; }
+  .kcard .muted { color: var(--text-muted); font-size: 0.92rem; }
+  .kcard dl { margin: 0; }
+  .kcard dt { font-weight: 600; color: var(--text-primary); font-size: 0.92rem; margin-top: 0.5rem; }
+  .kcard dd { margin: 0; color: var(--text-secondary); font-size: 0.92rem; }
+</style>
