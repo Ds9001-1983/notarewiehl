@@ -1,5 +1,6 @@
 ---
 import TextPageLayout from '@/layouts/TextPageLayout.astro';
+import BewerberFunnel from '@/components/BewerberFunnel.astro';
 import { getEntry, render } from 'astro:content';
 
 const entry = await getEntry('seiten', 'karriere');
@@ -9,4 +10,9 @@ const { Content } = await render(entry);
 
 <TextPageLayout title={entry.data.title} description={entry.data.description} lead={entry.data.lead}>
   <Content />
+  <section slot="after" class="section section--subtle" id="bewerbung">
+    <div class="container">
+      <BewerberFunnel />
+    </div>
+  </section>
 </TextPageLayout>

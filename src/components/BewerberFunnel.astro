@@ -1,0 +1,533 @@
+---
+import { kontakt } from '../data/kontakt';
+
+/* Fallback-Mailto für den No-JS-Fall: generisches Body-Gerüst,
+   das die Angaben der vier Schritte als Ausfüllhilfe vorgibt. */
+const fallbackBody = [
+  'Guten Tag,',
+  '',
+  'ich bewerbe mich als: [Notarfachangestellte/r | Auszubildende/r | Initiativ]',
+  'Frühestmöglicher Eintritt: ',
+  'Name: ',
+  'Telefon: ',
+  '',
+  'Lebenslauf und Zeugnisse habe ich dieser E-Mail angehängt.',
+].join('\r\n');
+const fallbackHref = `mailto:${kontakt.bewerbungEmail}?subject=${encodeURIComponent(
+  'Bewerbung'
+)}&body=${encodeURIComponent(fallbackBody)}`;
+---
+
+<div class="funnel" data-reveal>
+  <div class="funnel__head">
+    <span class="eyebrow">Bewerbung</span>
+    <h2 class="funnel__title">In vier Schritten zu Ihrer Bewerbung</h2>
+    <p class="funnel__intro">
+      Ihre Angaben verlassen den Browser nicht – erst mit dem Versand Ihrer E-Mail übermitteln Sie
+      sie an uns.
+    </p>
+  </div>
+
+  <form class="funnel__form" data-funnel data-email={kontakt.bewerbungEmail} novalidate>
+    <noscript>
+      <p class="funnel__noscript">
+        Der Assistent benötigt JavaScript. Ihre Bewerbung können Sie uns aber genauso gern direkt
+        per E-Mail an <a href={kontakt.bewerbungEmailLink}>{kontakt.bewerbungEmail}</a> senden –
+        die folgenden Punkte zeigen, welche Angaben uns helfen.
+      </p>
+    </noscript>
+
+    <!-- Dekorativer Fortschrittsbalken; der Stand steht als Text in jeder Legend -->
+    <div class="funnel__progress" data-funnel-progress aria-hidden="true" data-js-show hidden>
+      <div class="funnel__progress-bar"></div>
+    </div>
+
+    <fieldset class="funnel__step" data-step="1">
+      <legend class="funnel__legend" tabindex="-1">
+        <span class="funnel__step-count">Schritt 1 von 4</span>
+        Wofür möchten Sie sich bewerben?
+      </legend>
+      <div class="funnel__step-body">
+        <div class="funnel__cards">
+          <label class="funnel-card">
+            <input
+              type="radio"
+              name="weg"
+              value="Notarfachangestellte/r (m/w/d)"
+              aria-describedby="bf-err-weg"
+            />
+            <span class="funnel-card__title">Notarfachangestellte/r (m/w/d)</span>
+            <span class="funnel-card__desc">Für ausgebildete Fachkräfte – Voll- oder Teilzeit.</span>
+          </label>
+          <label class="funnel-card">
+            <input type="radio" name="weg" value="Ausbildung zur/zum Notarfachangestellten" />
+            <span class="funnel-card__title">Ausbildung zur/zum Notarfachangestellten</span>
+            <span class="funnel-card__desc"
+              >Starten Sie Ihre Laufbahn bei uns – mit enger Begleitung im Team.</span
+            >
+          </label>
+          <label class="funnel-card">
+            <input type="radio" name="weg" value="Initiativbewerbung / Quereinstieg" />
+            <span class="funnel-card__title">Initiativbewerbung / Quereinstieg</span>
+            <span class="funnel-card__desc"
+              >Sie überzeugen uns mit anderem Hintergrund? Wir sind offen.</span
+            >
+          </label>
+        </div>
+        <p class="funnel__error" id="bf-err-weg"></p>
+      </div>
+      <div class="funnel__nav" data-js-show hidden>
+        <button type="button" class="btn btn--primary" data-next>Weiter</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="funnel__step" data-step="2">
+      <legend class="funnel__legend" tabindex="-1">
+        <span class="funnel__step-count">Schritt 2 von 4</span>
+        Eckdaten
+      </legend>
+      <div class="funnel__step-body">
+        <p class="funnel__hint">Alle Angaben in diesem Schritt sind optional.</p>
+
+        <fieldset class="funnel__group">
+          <legend class="funnel__group-legend">Arbeitszeit</legend>
+          <div class="funnel__radios">
+            <label class="funnel__radio">
+              <input type="radio" name="arbeitszeit" value="Vollzeit" />
+              Vollzeit
+            </label>
+            <label class="funnel__radio">
+              <input type="radio" name="arbeitszeit" value="Teilzeit" />
+              Teilzeit
+            </label>
+            <label class="funnel__radio">
+              <input type="radio" name="arbeitszeit" value="Nach Absprache" checked />
+              Nach Absprache
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="funnel__field">
+          <label class="funnel__label" for="bf-beginn"
+            >Frühestmöglicher Eintritt <span class="funnel__opt">(optional)</span></label
+          >
+          <input
+            class="funnel__input"
+            type="text"
+            id="bf-beginn"
+            name="beginn"
+            maxlength="40"
+            aria-describedby="bf-hint-beginn"
+          />
+          <p class="funnel__hint" id="bf-hint-beginn">z. B. „ab sofort“ oder „01.10.2026“</p>
+        </div>
+
+        <div class="funnel__field">
+          <label class="funnel__label" for="bf-erfahrung"
+            >Berufserfahrung <span class="funnel__opt">(optional)</span></label
+          >
+          <select class="funnel__select" id="bf-erfahrung" name="erfahrung">
+            <option value="">Keine Angabe</option>
+            <option>In Ausbildung / Berufseinstieg</option>
+            <option>Erfahrung im Notariat oder in einer Kanzlei</option>
+            <option>Berufserfahrung in anderem Bereich</option>
+          </select>
+        </div>
+      </div>
+      <div class="funnel__nav" data-js-show hidden>
+        <button type="button" class="btn btn--ghost" data-prev>Zurück</button>
+        <button type="button" class="btn btn--primary" data-next>Weiter</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="funnel__step" data-step="3">
+      <legend class="funnel__legend" tabindex="-1">
+        <span class="funnel__step-count">Schritt 3 von 4</span>
+        Ihre Kontaktdaten
+      </legend>
+      <div class="funnel__step-body">
+        <div class="funnel__field">
+          <label class="funnel__label" for="bf-name">Name</label>
+          <input
+            class="funnel__input"
+            type="text"
+            id="bf-name"
+            name="name"
+            required
+            autocomplete="name"
+            maxlength="80"
+            aria-describedby="bf-err-name"
+          />
+          <p class="funnel__error" id="bf-err-name"></p>
+        </div>
+
+        <div class="funnel__field">
+          <label class="funnel__label" for="bf-telefon"
+            >Telefon <span class="funnel__opt">(optional)</span></label
+          >
+          <input
+            class="funnel__input"
+            type="tel"
+            id="bf-telefon"
+            name="telefon"
+            autocomplete="tel"
+            maxlength="30"
+          />
+        </div>
+
+        <div class="funnel__field">
+          <label class="funnel__label" for="bf-nachricht"
+            >Nachricht <span class="funnel__opt">(optional, max. 400 Zeichen)</span></label
+          >
+          <textarea
+            class="funnel__textarea"
+            id="bf-nachricht"
+            name="nachricht"
+            rows="4"
+            maxlength="400"
+            aria-describedby="bf-hint-nachricht"></textarea>
+          <p class="funnel__hint" id="bf-hint-nachricht">
+            Ausführliches gehört ins Anschreiben – hier reicht ein Satz.
+          </p>
+        </div>
+      </div>
+      <div class="funnel__nav" data-js-show hidden>
+        <button type="button" class="btn btn--ghost" data-prev>Zurück</button>
+        <button type="button" class="btn btn--primary" data-next>Weiter</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="funnel__step" data-step="4">
+      <legend class="funnel__legend" tabindex="-1">
+        <span class="funnel__step-count">Schritt 4 von 4</span>
+        Absenden per E-Mail
+      </legend>
+      <div class="funnel__step-body">
+        <dl class="funnel__summary" data-funnel-summary data-js-show hidden></dl>
+
+        <div>
+          <h3 class="funnel__h3">Bitte hängen Sie an Ihre E-Mail an:</h3>
+          <ul class="funnel__list">
+            <li>Lebenslauf (PDF)</li>
+            <li>Zeugnisse und Nachweise, soweit vorhanden</li>
+            <li>Anschreiben – gern kurz, eine halbe Seite genügt</li>
+          </ul>
+        </div>
+
+        <p class="funnel__legal">
+          Mit dem Versand Ihrer E-Mail übermitteln Sie uns Ihre Angaben. Hinweise zur Verarbeitung
+          von Bewerberdaten finden Sie in unserer
+          <a href="/SONSTIGES/Datenschutz/Website/">Datenschutzerklärung</a>. Bitte beachten Sie,
+          dass unverschlüsselte E-Mails Sicherheitslücken aufweisen können.
+        </p>
+      </div>
+      <!-- Nav in Schritt 4 bewusst NICHT versteckt: der Gold-CTA ist zugleich der No-JS-Weg -->
+      <div class="funnel__nav">
+        <button type="button" class="btn btn--ghost" data-prev data-js-show hidden>Zurück</button>
+        <a class="btn btn--gold" data-funnel-mailto href={fallbackHref}>E-Mail-Programm öffnen</a>
+      </div>
+      <p class="funnel__alt">
+        Es öffnet sich Ihr E-Mail-Programm. Alternativ senden Sie Ihre Bewerbung direkt an
+        <a href={kontakt.bewerbungEmailLink}>{kontakt.bewerbungEmail}</a> oder rufen Sie uns an:
+        <a href={kontakt.telefonLink}>{kontakt.telefonAnzeige}</a>.
+      </p>
+    </fieldset>
+  </form>
+</div>
+
+<script>
+  import '../lib/funnel.client.ts';
+</script>
+
+<style>
+  .funnel {
+    --c-error: #b00020; /* 7.3:1 auf Weiß */
+  }
+  /* hidden gewinnt immer – auch gegen display:flex/grid weiter unten */
+  .funnel [hidden] {
+    display: none !important;
+  }
+
+  /* --- Kopf --- */
+  .funnel__head {
+    max-width: var(--container-text);
+    margin-inline: auto;
+    margin-bottom: var(--sp-6);
+  }
+  /* Auf --bg-subtle erreicht accent-700 nur ~4.47:1 → dunklere Stufe (6.3:1) */
+  .funnel .eyebrow {
+    color: var(--c-accent-800);
+  }
+  .funnel__title {
+    margin-bottom: var(--sp-3);
+  }
+  .funnel__intro {
+    color: var(--text-secondary);
+    max-width: var(--measure-narrow);
+  }
+
+  /* --- Form-Karte --- */
+  .funnel__form {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-sm);
+    padding: clamp(var(--sp-5), 4vw, var(--sp-7));
+    max-width: var(--container-text);
+    margin-inline: auto;
+  }
+  .funnel__noscript {
+    padding: var(--sp-4);
+    background: var(--c-accent-100);
+    border-radius: var(--r-md);
+    margin-bottom: var(--sp-5);
+  }
+
+  /* --- Fortschritt (dekorativ) --- */
+  .funnel__progress {
+    height: 3px;
+    background: var(--c-neutral-200);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+    margin-bottom: var(--sp-6);
+  }
+  .funnel__progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--c-accent-500), var(--c-accent-300));
+    transform: scaleX(var(--p, 0.25));
+    transform-origin: left;
+    transition: transform var(--dur-med) var(--ease-out);
+  }
+
+  /* --- Schritte --- */
+  .funnel__step,
+  .funnel__group {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    min-width: 0; /* fieldset-Eigenheit: sonst min-content-Overflow bei 320px */
+  }
+  /* Nur ohne JS relevant (alle Schritte sichtbar); im Wizard-Modus ist der
+     direkte Vorgänger stets [hidden] und der Abstand entfällt korrekt */
+  .funnel__step:not([hidden]) + .funnel__step:not([hidden]) {
+    margin-top: var(--sp-7);
+  }
+  .funnel__legend {
+    padding: 0;
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    line-height: var(--lh-snug);
+    color: var(--text-primary);
+    scroll-margin-top: calc(var(--header-h) + 1rem);
+  }
+  .funnel__step-count {
+    display: block;
+    font-size: var(--fs-small);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-accent-700); /* 4.87:1 auf Weiß */
+    margin-bottom: var(--sp-1);
+  }
+  .funnel__step-body {
+    display: grid;
+    gap: var(--sp-5);
+    margin-top: var(--sp-5);
+  }
+  .funnel__step.is-entering {
+    animation: funnel-step-in var(--dur-med) var(--ease-out) both;
+  }
+  /* Endzustand = Ruhezustand → auch bei Reduced Motion (0.001ms) korrekt */
+  @keyframes funnel-step-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+
+  /* --- Radio-Karten (Schritt 1) --- */
+  .funnel__cards {
+    display: grid;
+    gap: var(--sp-3);
+  }
+  .funnel input[type='radio'] {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin: 0;
+    accent-color: var(--c-primary-600);
+    cursor: pointer;
+  }
+  .funnel-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--sp-3);
+    row-gap: var(--sp-1);
+    align-items: center;
+    padding: var(--sp-4);
+    border: 1.5px solid var(--c-neutral-300);
+    border-radius: var(--r-md);
+    background: var(--bg-surface);
+    cursor: pointer;
+    transition:
+      border-color var(--dur-fast) var(--ease-out),
+      background var(--dur-fast) var(--ease-out);
+  }
+  .funnel-card input[type='radio'] {
+    grid-row: 1 / span 2;
+  }
+  .funnel-card__title {
+    grid-column: 2;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .funnel-card__desc {
+    grid-column: 2;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+  }
+  .funnel-card:has(:focus-visible) {
+    border-color: var(--c-primary-400);
+  }
+  .funnel-card:has(:checked) {
+    border: 2px solid var(--c-accent-600);
+    background: var(--c-accent-100);
+    padding: calc(var(--sp-4) - 0.5px); /* gleicht die dickere Border aus – kein Springen */
+  }
+
+  /* --- Felder --- */
+  .funnel__label,
+  .funnel__group-legend {
+    display: block;
+    padding: 0;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--sp-2);
+  }
+  .funnel__opt {
+    font-weight: 400;
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+  }
+  .funnel__input,
+  .funnel__select,
+  .funnel__textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    font: inherit;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    border: 1.5px solid var(--c-neutral-500); /* #686e76 – ≥3:1 (WCAG 1.4.11) */
+    border-radius: var(--r-md);
+  }
+  .funnel__input,
+  .funnel__select {
+    min-height: 48px;
+  }
+  .funnel__textarea {
+    resize: vertical;
+  }
+  .funnel__radios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2) var(--sp-5);
+  }
+  .funnel__radio {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
+    min-height: 44px;
+    cursor: pointer;
+  }
+  .funnel__hint {
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    margin-top: var(--sp-2);
+  }
+  .funnel__step-body > .funnel__hint {
+    margin-top: 0;
+  }
+
+  /* --- Fehler: Farbe + Text, nie Farbe allein --- */
+  .funnel__error {
+    color: var(--c-error);
+    font-weight: 600;
+    font-size: var(--fs-small);
+    margin-top: var(--sp-2);
+  }
+  .funnel__error:empty {
+    display: none;
+  }
+  .funnel [aria-invalid='true'] {
+    border-color: var(--c-error);
+  }
+
+  /* --- Zusammenfassung (Schritt 4) --- */
+  .funnel__summary {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-2) var(--sp-5);
+    padding: var(--sp-4);
+    background: var(--c-primary-050);
+    border-radius: var(--r-md);
+  }
+  .funnel__summary:empty {
+    display: none;
+  }
+  .funnel__summary :global(dt) {
+    font-weight: 600;
+    font-size: var(--fs-small);
+    color: var(--text-primary);
+  }
+  .funnel__summary :global(dd) {
+    margin: 0;
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    overflow-wrap: anywhere;
+  }
+  .funnel__h3 {
+    font-size: var(--fs-h4);
+    margin-bottom: var(--sp-2);
+  }
+  .funnel__list li + li {
+    margin-top: var(--sp-1);
+  }
+  .funnel__legal,
+  .funnel__alt {
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+  }
+  .funnel__alt {
+    margin-top: var(--sp-3);
+  }
+
+  /* --- Navigation --- */
+  .funnel__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    margin-top: var(--sp-6);
+  }
+  .funnel__nav [data-next],
+  .funnel__nav [data-funnel-mailto] {
+    margin-left: auto;
+  }
+
+  /* --- Mobil --- */
+  @media (max-width: 640px) {
+    .funnel__nav {
+      flex-direction: column;
+    }
+    .funnel__nav .btn {
+      width: 100%;
+      margin-left: 0;
+    }
+    .funnel__summary {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .funnel__summary :global(dd) {
+      margin-bottom: var(--sp-2);
+    }
+  }
+</style>

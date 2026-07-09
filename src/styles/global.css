@@ -173,6 +173,10 @@ ol {
 .section--inverse .eyebrow {
   color: var(--c-accent-300);
 }
+.section--subtle .eyebrow {
+  /* accent-700 erreicht auf --bg-subtle nur 4.47:1 – accent-800: 6.3:1 */
+  color: var(--c-accent-800);
+}
 
 /* --- Scroll-Lock bei offenem Drawer --- */
 html.nav-locked,

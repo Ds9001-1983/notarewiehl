@@ -12,6 +12,9 @@ export const kontakt = {
   faxAnzeige: '+49 (0) 2262 / 6921 - 21',
   email: 'info@notare-wiehl.de',
   emailLink: 'mailto:info@notare-wiehl.de',
+  // Bewerbungen (Karriere-Seite)
+  bewerbungEmail: 'info@notare-wiehl.de',
+  bewerbungEmailLink: 'mailto:info@notare-wiehl.de',
   tagline:
     'Wir sind für Sie da – fachkundig, pflichtbewusst und serviceorientiert.',
   // Öffnungszeiten (Kundenverkehr)

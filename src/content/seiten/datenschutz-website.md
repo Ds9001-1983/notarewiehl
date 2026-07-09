@@ -124,6 +124,16 @@ Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSG
 
 Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.
 
+### Bewerbungen
+
+Wenn Sie sich bei uns bewerben (z.B. per E-Mail über den Bewerbungs-Assistenten auf unserer Karriere-Seite), verarbeiten wir die von Ihnen mitgeteilten personenbezogenen Daten (z.B. Name, Kontaktdaten, Angaben zu Werdegang und Qualifikation sowie Ihre Bewerbungsunterlagen) ausschließlich zum Zwecke der Durchführung des Bewerbungsverfahrens. Der Bewerbungs-Assistent auf unserer Website überträgt selbst keine Daten an uns oder an Dritte; er bereitet lediglich in Ihrem Browser eine E-Mail vor, die Sie anschließend selbst über Ihr E-Mail-Programm an uns senden.
+
+Rechtsgrundlage der Verarbeitung ist § 26 Abs. 1 BDSG (Entscheidung über die Begründung eines Beschäftigungsverhältnisses) in Verbindung mit Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen). Soweit Sie uns freiwillig weitergehende Angaben machen, beruht die Verarbeitung auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie jederzeit mit Wirkung für die Zukunft widerrufen können.
+
+Kommt kein Beschäftigungsverhältnis zustande, löschen wir Ihre Bewerbungsunterlagen spätestens sechs Monate nach Abschluss des Bewerbungsverfahrens, sofern der Löschung keine berechtigten Interessen (z.B. Nachweispflichten nach dem Allgemeinen Gleichbehandlungsgesetz) oder gesetzliche Aufbewahrungspflichten entgegenstehen oder Sie nicht in eine längere Speicherung eingewilligt haben. Im Falle einer Einstellung werden die erforderlichen Daten in die Personalakte überführt.
+
+Bitte beachten Sie, dass die Übermittlung per unverschlüsselter E-Mail Sicherheitslücken aufweisen kann; ein lückenloser Schutz der Inhalte vor dem Zugriff Dritter ist dabei nicht möglich. Alternativ können Sie uns Ihre Unterlagen auf dem Postweg zukommen lassen.
+
 ### Online-Formulare
 
 Mit unserer Website ist eine Schaltfläche für die Online-Datenaufnahme verknüpft, mit der Sie die Möglichkeit haben, uns Daten per Online-Formular zu übermitteln. Nehmen Sie diesen Online-Service von NotarNow (LegalNow GmbH, Gerhart-Hauptmann-Str. 17a, 61440 Oberursel) in Anspruch, so werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen kurzzeitig automatisch auf den NotarNow-Servern gespeichert und im Anschluss an uns weitergeleitet. Die Datenübertragung erfolgt verschlüsselt über eine Transportverschlüsselung per Secure Socket Layer (SSL/TLS).
