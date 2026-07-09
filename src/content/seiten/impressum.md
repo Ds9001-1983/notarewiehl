@@ -1,10 +1,10 @@
 ---
 title: "Impressum"
-description: "Notar Dr. Tim Kasper"
+description: "Impressum der Notare Dr. Tim Kasper und Philip Scholz, Hauptstraße 41, 51674 Wiehl."
 ---
 ## Impressum
 
-### Angaben gemäß § 5 TMG
+### Angaben gemäß § 5 DDG
 
 Notar Dr. Tim Kasper
 
@@ -26,17 +26,17 @@ Tel.: +49 (0) 2262 / 6921 - 0
 
 Fax: +49 (0) 2262 / 6921 - 21
 
-E-Mail: [info@notare-wiehl.de](mailto:info%40notare-wiehl.de?subject=Betreff&body=Nachricht)
+E-Mail: [info@notare-wiehl.de](mailto:info@notare-wiehl.de)
 
 ### Umsatzsteuer-ID
 
 Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
 
-aktuelle Sozietät (Notare Dr. Kasper und Scholz): DE347 888 711;
+aktuelle Sozietät (Notare Dr. Kasper und Scholz): DE 347 888 711;
 
 frühere Sozietät (Notare Dr. Michael & Dr. Kasper): DE 326 062 335.
 
-### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+### Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
 Notar Dr. Tim Kasper
 
@@ -52,25 +52,37 @@ Die gesetzliche Berufsbezeichnung „Notar“ wurde verliehen in der Bundesrepub
 
 ### Zuständige Notarkammer:
 
-<table><tbody><tr><th scope="col"><p>Rheinische Notarkammer</p></th><th scope="col"><p><br></p></th></tr><tr><td><p>Anschrift:&nbsp;</p></td><td><p>Burgmauer 53<br>50667&nbsp;Köln</p></td></tr><tr><td><p>Telefon:</p></td><td><p>0221 / 2575291</p></td></tr><tr><td><p>Fax:</p></td><td><p>0221 / 2575310</p></td></tr><tr><td><p>E-Mail:</p></td><td><p>info@rhnotk.de</p></td></tr><tr><td><p>Web:</p></td><td><p>http://www.rhnotk.de</p></td></tr></tbody></table>
+**Rheinische Notarkammer**
+
+Burgmauer 53
+
+50667 Köln
+
+Telefon: 0221 / 2575291
+
+Fax: 0221 / 2575310
+
+E-Mail: [info@rhnotk.de](mailto:info@rhnotk.de)
+
+Web: [www.rhnotk.de](https://www.rhnotk.de/)
 
 ### Zuständige Aufsichtsbehörde:
 
-<table><tbody><tr><th scope="col"><p>Der Präsident des Landgerichts Köln</p></th><th scope="col"><p><br></p></th></tr><tr><td><p>Anschrift:&nbsp;</p></td><td><p>Luxemburger Str. 101<br>50939 Köln</p></td></tr></tbody></table>
+**Der Präsident des Landgerichts Köln**
 
-Der Berufsstand **Notar / Notarin** unterliegt den unter [www.bnotk.de/Notar/Berufsrecht](https://www.notar.de/der-notar/berufsrecht) genannten berufsrechtlichen Regelungen.
+Luxemburger Str. 101
+
+50939 Köln
+
+Der Berufsstand **Notar / Notarin** unterliegt den unter [www.notar.de – Berufsrecht](https://www.notar.de/der-notar/berufsrecht) genannten berufsrechtlichen Regelungen.
 
 ### Streitschlichtung
 
-Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: [https://ec.europa.eu/consumers/odr](https://ec.europa.eu/consumers/odr).
-
-Unsere E-Mail-Adresse finden Sie oben im Impressum.
-
-Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
 
 ### Haftung für Inhalte
 
-Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen (Art. 8 der Verordnung (EU) 2022/2065 – Digital Services Act).
 
 Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
 
