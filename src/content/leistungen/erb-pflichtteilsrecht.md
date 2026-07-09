@@ -29,7 +29,7 @@ Vorteilhaft an einer notariellen letztwilligen Verfügung ist auch, dass sie nic
 
 Verstirbt der Erblasser, wird eine elektronische Meldekette in Gang gesetzt, die dazu führt, dass die Verwahrstelle über den Sterbefall informiert wird und die letztwillige Verfügung beim zuständigen Nachlassgericht abliefert, das sie sodann eröffnet.
 
-Nähere Informationen zum ZTR finden Sie [hier](https://www.testamentsregister.de/zentrales-testamentsregister/)
+Nähere Informationen finden Sie [auf der Website des Zentralen Testamentsregisters](https://www.testamentsregister.de/zentrales-testamentsregister/).
 
 **Pflichtteilsrechtliche Gestaltungen**
 

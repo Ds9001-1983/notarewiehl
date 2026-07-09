@@ -23,7 +23,13 @@ function initReveal() {
     },
     { rootMargin: '0px 0px -10% 0px', threshold: 0.08 }
   );
-  els.forEach((el) => io.observe(el));
+  els.forEach((el) => {
+    // Stagger: Kinder mit data-reveal-item wellenartig verzögern (max. 8 Stufen)
+    el.querySelectorAll<HTMLElement>('[data-reveal-item]').forEach((child, i) => {
+      child.style.setProperty('--reveal-delay', `${Math.min(i, 8) * 70}ms`);
+    });
+    io.observe(el);
+  });
 }
 
 initReveal();

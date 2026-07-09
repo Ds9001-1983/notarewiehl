@@ -25,7 +25,7 @@ const items = leistungen.filter((l) => l.href !== exclude);
   <ul class="leistungen__grid">
     {
       items.map((l) => (
-        <li>
+        <li data-reveal-item>
           <a class="lcard" href={l.href}>
             {icon(l.icon) && (
               <span class="lcard__icon">
@@ -34,7 +34,9 @@ const items = leistungen.filter((l) => l.href !== exclude);
             )}
             <span class="lcard__title">{l.label}</span>
             {l.desc && <span class="lcard__desc">{l.desc}</span>}
-            <span class="lcard__more" aria-hidden="true">Mehr erfahren →</span>
+            <span class="lcard__more" aria-hidden="true">
+              Mehr erfahren <span class="lcard__arrow" aria-hidden="true">→</span>
+            </span>
           </a>
         </li>
       ))
@@ -69,10 +71,11 @@ const items = leistungen.filter((l) => l.href !== exclude);
       box-shadow var(--dur-fast) var(--ease-out),
       border-color var(--dur-fast) var(--ease-out);
   }
-  .lcard:hover {
+  .lcard:hover,
+  .lcard:focus-visible {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
-    border-color: var(--c-primary-300);
+    border-color: var(--c-accent-400);
   }
   .lcard__icon {
     display: grid;
@@ -82,6 +85,11 @@ const items = leistungen.filter((l) => l.href !== exclude);
     border-radius: var(--r-md);
     background: var(--c-primary-050);
     margin-bottom: var(--sp-4);
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  .lcard:hover .lcard__icon,
+  .lcard:focus-visible .lcard__icon {
+    background: var(--c-accent-100);
   }
   .lcard__icon img { width: 38px; height: 38px; }
   .lcard__title {
@@ -101,5 +109,19 @@ const items = leistungen.filter((l) => l.href !== exclude);
     color: var(--accent-text);
     font-weight: 600;
     font-size: 0.9rem;
+  }
+  .lcard__arrow {
+    display: inline-block;
+    transition: transform var(--dur-fast) var(--ease-out);
+  }
+  .lcard:hover .lcard__arrow,
+  .lcard:focus-visible .lcard__arrow {
+    transform: translateX(4px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lcard:hover .lcard__arrow,
+    .lcard:focus-visible .lcard__arrow {
+      transform: none;
+    }
   }
 </style>

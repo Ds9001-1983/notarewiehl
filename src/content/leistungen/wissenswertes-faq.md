@@ -6,7 +6,7 @@ description: "Die folgenden Hinweise sollen Ihnen einen Überblick über die Abl
 
 Die folgenden Hinweise sollen Ihnen einen Überblick über die Abläufe in unserem Büro geben. Sie dienen der besseren Vorbereitung und einem reibungslosen Ablauf Ihrer Angelegenheiten. Bitte lesen Sie die für Sie relevanten Punkte vor Ihrem Termin aufmerksam durch.
 
-#### 1\. Terminvereinbarung und Erstkontakt
+### 1\. Terminvereinbarung und Erstkontakt
 Wie vereinbare ich einen Termin?
 
 Die Terminvereinbarung hängt davon ab, ob es sich um eine neue Angelegenheit oder ein bereits laufendes Verfahren handelt.
@@ -30,7 +30,7 @@ Eine inhaltliche rechtliche Beratung erfolgt über die Telefonzentrale nicht. Eb
 
 In Ausnahmefällen (z.B. bei Mandanten ohne Internetzugang) kann eine mündliche Erstaufnahme erfolgen, ggf. nach gesonderter Terminvereinbarung oder Rückruf.
 
-Die Zeiten, in denen eine Sachbearbeiterin in einem laufenden Verfahren direkt angerufen werden kann, sind bewusst stark eingeschränkt, um eine konzentrierte Sachbearbeitung zu ermöglichen (näher Informationen [hier](/KONTAKT/)). Die Möglichkeit, sich per E-Mail bei der zuständigen Sachbearbeiterin zu melden (und auf diese Weise auch die Abstimmung eines Telefontermins außerhalb der üblichen Sprechzeiten anzuregen), besteht für Sie stets und unbeschränkt.
+Die Zeiten, in denen eine Sachbearbeiterin in einem laufenden Verfahren direkt angerufen werden kann, sind bewusst stark eingeschränkt, um eine konzentrierte Sachbearbeitung zu ermöglichen (nähere Informationen [auf unserer Kontaktseite](/KONTAKT/)). Die Möglichkeit, sich per E-Mail bei der zuständigen Sachbearbeiterin zu melden (und auf diese Weise auch die Abstimmung eines Telefontermins außerhalb der üblichen Sprechzeiten anzuregen), besteht für Sie stets und unbeschränkt.
 
 Bearbeitung Ihres Anliegens
 
@@ -54,18 +54,18 @@ Bitte beachten Sie, dass eine rechtliche Befassung stets eine vollständige und 
 
 Eine informelle oder überschlägige rechtliche Einschätzung einzelner Fragen ist daher in der Regel nicht möglich. Eine Beratung erfolgt ausschließlich strukturiert und auf Grundlage eines vollständig erfassten Sachverhalts.
 
-Eine persönliche Beratung ist dabei unverbindlich im Sinne einer fehlenden Verpflichtung zur weiteren Mandatierung, stellt jedoch bereits eine Amtstätigkeit dar und kann nach den gesetzlichen Vorschriften gebührenpflichtig sein. "Unverbindlich" bedeutet daher nicht "kostenfrei". Weitergehende Informationen finden Sie [hier](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/).
+Eine persönliche Beratung ist dabei unverbindlich im Sinne einer fehlenden Verpflichtung zur weiteren Mandatierung, stellt jedoch bereits eine Amtstätigkeit dar und kann nach den gesetzlichen Vorschriften gebührenpflichtig sein. "Unverbindlich" bedeutet daher nicht "kostenfrei". Weitergehende Informationen finden Sie [unter Notarielle Beratung und weiteres Verfahren](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/).
 
 Zudem kann bereits im Vorfeld eines vereinbarten Termins – insbesondere im Rahmen einer schriftlichen oder telefonischen Korrespondenz – eine sachliche rechtliche Befassung mit dem konkreten Anliegen erfolgen, die Bestandteil der notariellen Amtstätigkeit sein kann.
 
-#### 2\. Persönliche Vorsprache (bitte nicht ohne Termin)
+### 2\. Persönliche Vorsprache (bitte nicht ohne Termin)
 Unser Büro ist auf eine terminbasierte Bearbeitung von Anliegen ausgerichtet, da nur so eine sachgerechte Vorbereitung und angemessene Bearbeitung gewährleistet werden kann.
 
 Spontane Vorsprachen ohne Termin und insbesondere eine "offene Sprechstunde" sind nicht vorgesehen. Dies gilt unabhängig davon, ob es sich um eine neue oder bereits laufende Angelegenheit handelt. Denn während der regulären Arbeitszeit ist das Notariat vollständig mit der Vorbereitung und Durchführung von Terminen sowie der Bearbeitung laufender Verfahren befasst. Eine parallele Bearbeitung unangekündigter Anliegen ist daher organisatorisch nicht möglich.
 
 Mittwochs ist unser Büro für den Mandantenverkehr geschlossen und steht auch nicht für kurzfristige oder spontane Vorsprachen zur Verfügung.
 
-#### 3\. Terminvorlauf und Organisation
+### 3\. Terminvorlauf und Organisation
 Der zeitliche Vorlauf bei Beratungsterminen ergibt sich aus einer bewusst strukturierten Büroorganisation, die sicherstellt, dass sämtliche Mandate geordnet, priorisiert und mit der gebotenen Sorgfalt bearbeitet werden können.
 
 Pro Woche werden durch die Notare eine Vielzahl von Beurkundungen durchgeführt. Dies umfasst ein sehr breites und inhaltlich stark variierendes Spektrum an Verfahren, die jeweils eine individuelle Vorbereitung, Prüfung und Durchführung erfordern und die einen sehr unterschiedlichen Umfang, Schwierigkeitsgrad und zeitlichen Bedarf haben.
@@ -76,7 +76,7 @@ Beurkundungstermine in bereits vollständig vorbereiteten Verfahren sind dagegen
 
 Die tatsächliche Wartezeit hängt natürlich stets auch von der zeitlichen Flexibilität der Beteiligten ab.
 
-#### 4\. Beurkundungstermine
+### 4\. Beurkundungstermine
 Beurkundungstermine werden grundsätzlich erst vergeben, wenn:
 • ein vollständiger Urkundenentwurf vorliegt und
 • dieser allen Beteiligten übermittelt wurde und
@@ -94,7 +94,7 @@ Bei mehreren Beteiligten sollten diese sich zunächst intern über einen Termin 
 
 Werden ausnahmsweise mehrere Termine angeboten, bitten wir um Rückmeldung bis zum nächsten Werktag 12:00 Uhr. Erfolgt keine Rückmeldung, werden die Termine wieder freigegeben.
 
-#### 5\. Vorbereitung und Ablauf von Beratungsterminen
+### 5\. Vorbereitung und Ablauf von Beratungsterminen
 Vorbereitung der Erstberatung
 
 Zu jedem Termin sollte ein gültiger Personalausweis oder Reisepass mitgebracht werden.
@@ -107,7 +107,7 @@ Für Erstberatungstermine wird in der Regel ein Zeitrahmen von bis zu 60 Minuten
 
 Bei komplexen Sachverhalten dient der Termin häufig zunächst der Einordnung, Abgrenzung und Priorisierung der Themen. Die weitere Bearbeitung erfolgt dann in strukturierten Folgeschritten.
 
-#### 6\. Rahmenbedingungen im Termin
+### 6\. Rahmenbedingungen im Termin
 Begleitpersonen
 
 Begleitpersonen sollten vorab mit dem Notariat abgestimmt werden. Dies ist erforderlich, da die räumlichen Kapazitäten nicht darauf ausgelegt sind, dass zu jedem Termin zusätzliche Personen ohne vorherige Abstimmung erscheinen. Eine Teilnahme von Begleitpersonen ist außerdem mit Blick auf unsere weitreichende Verschwiegenheitspflicht nur zulässig, wenn alle anderen Beteiligten damit einverstanden.
@@ -128,7 +128,7 @@ Vereinbarte Termine sind verbindlich. Sollte ein Termin nicht wahrgenommen werde
 
 Ein unentschuldigtes Nichterscheinen ohne Absage kann dazu führen, dass zukünftige Terminvergaben eingeschränkt werden. Zudem können bereits entstandene Aufwendungen für vorbereitende Tätigkeiten nach den gesetzlichen Gebührenvorschriften in Rechnung gestellt werden.
 
-#### 7\. Auswärtige Termine („Hausbesuche“)
+### 7\. Auswärtige Termine („Hausbesuche“)
 Hausbesuche kommen nur in begründeten Ausnahmefällen in Betracht, insbesondere bei fehlender Mobilität. Sie sind organisatorisch aufwendig und werden daher nur im Einzelfall und in der Regel zu tagesrandnahen Zeiten durchgeführt.
 
 Bitte stellen Sie sicher, dass
@@ -140,17 +140,17 @@ Bitte stellen Sie sicher, dass
 
 Sofern Sie Raucher sind, bitten wir höflich darum, auch in Ihren eigenen Räumlichkeiten in Anwesenheit des Notars auf das Rauchen zu verzichten.
 
-#### 8\. Parken und Anfahrt
+### 8\. Parken und Anfahrt
 Für Ihren Besuch bei uns stehen in der Umgebung verschiedene öffentliche Parkmöglichkeiten zur Verfügung:
 • Hauptstraße nahe dem Notariat: Parken mit Parkscheibe bis 60 Minuten
 • Warthstraße im Bereich Grundschule: Parken mit Parkscheibe bis 120 Minuten
 • Weiherplatz und Umgebung: kostenpflichtige Parkplätze
 • Hauptstraße im Bereich Gymnasium: langfristiges, kostenfreies Parken in fußläufiger Entfernung
 
-#### 9\. Barrierefreiheit
+### 9\. Barrierefreiheit
 Der gesamte Mandantenbereich unseres Büros befindet sich im Erdgeschoss und ist barrierefrei.
 
 Aufgrund der baulichen Gegebenheiten im Wiehler Oberdorf besteht kein Behindertenparkplatz direkt vor der Haustür, die sich [auf der Gebäuderückseite](/UeBER-UNS/Umzug/) befindet. Für gehbeeinträchtigte Personen empfiehlt sich das Parken im Bereich der Hauptstraße sowie die Nutzung des barrierearmen Weges zwischen unserem Gebäude und der Stadtbücherei.
 
-#### 10\. Kundentoilette
+### 10\. Kundentoilette
 Eine Kundentoilette steht im Notariat zur Verfügung.

@@ -9,7 +9,7 @@ Eine Betreuungsverfügung ist das Mittel der Wahl, wenn man Einfluss darauf nehm
 
 Schließlich ist es möglich, durch eine sog. negative Betreuungsverfügung eine bestimmte Person als Betreuer auszuschließen.
 
-Weitere Informationen zur Betreuungsverfügung finden Sie [hier](https://www.vorsorgeregister.de/hilfe/vorsorgeangelegenheiten/die-betreuungsverfuegung).
+Weitere Informationen zur Betreuungsverfügung finden Sie [auf den Hilfeseiten des Zentralen Vorsorgeregisters](https://www.vorsorgeregister.de/hilfe/vorsorgeangelegenheiten/die-betreuungsverfuegung).
 
 ## General- und Vorsorgevollmacht
 Durch die Erteilung einer General- und Vorsorgevollmacht kann man die Bestellung eines Betreuers vermeiden. Eine Betreuung darf nämlich nur angeordnet werden, soweit dies erforderlich ist, und diese Erforderlichkeit ist zu verneinen, soweit die Angelegenheiten des Betreuungsbedürftigen durch einen Bevollmächtigten ebenso gut wie durch einen Betreuer besorgt werden können.
@@ -22,7 +22,7 @@ Dem Bevollmächtigten können auch weitergehende Befugnisse für sehr sensible p
 
 Diese Befugnisse kommen allerdings im engeren Sinne einer Vorsorgevollmacht erst und nur dann zum Tragen, wenn der Vollmachtgeber die jeweilige Entscheigung nicht selbst treffen kann, weil er sich nicht äußern kann bzw. nicht über das für eine eigenverantwortliche Entscheidung notwendige Mindestmaß an „natürlicher Einsichtsfähigkeit“ verfügt (die Erteilung der Vollmacht bedeutet also keine „Entmündigung“ des Vollmachtgebers!). Es geht um Situationen, von denen man hofft, dass sie nie eintreten werden. Man kann solche Situationen aber nicht dadurch verhindern, dass man keine Regelungen trifft. Vielmehr sollte man sich bewusst machen, dass die Erteilung einer Vorsorgevollmacht und eine Betreuungsverfügung (siehe oben) einem immerhin die Möglichkeit eröffnet, die Befugnis, „im Fall der Fälle“ für den Betroffenen zu entscheiden, in die Hände einer vertrauten Person zu legen. Andernfalls bleibt es dem Betreuungsgericht überlassen, jemanden auszuwählen, der solche Entscheidungen bei Bedarf trifft. In jedem Fall schützt das Gesetz den Vollmachtgeber/Betreuten dadurch, dass ärztliche Maßnahmen sowie freiheitsentziehende und freiheitsbeschränkende Maßnahmen, denen anstelle des Betroffenen dessen Betreuer oder Bevollmächtigter zugestimmt hat, nur mit Genehmigung des Betreuungsgerichts zulässig sind.
 
-Weitere Informationen zur General-/Vorsorgevollmacht finden Sie [hier](https://www.vorsorgeregister.de/hilfe/vorsorgeangelegenheiten/die-vorsorgevollmacht).
+Weitere Informationen zur General-/Vorsorgevollmacht finden Sie [beim Zentralen Vorsorgeregister](https://www.vorsorgeregister.de/hilfe/vorsorgeangelegenheiten/die-vorsorgevollmacht).
 
 **Patientenverfügung**
 
@@ -30,7 +30,7 @@ Im Rahmen einer Patientenverfügung kann man für bestimmte medizinische Situati
 
 Der Betreuer bzw. Bevollmächtigte hat dann lediglich zu prüfen, ob diese Festlegungen auf die aktuelle Lebens- und Behandlungssituation zutreffen. Sofern hierüber mit dem behandelnden Arzt Einvernehmen besteht, erfordert ein Behandlungsabbruch bzw. die Nichtdurchführung medzinischer Maßnahmen auch keine Genehmigung des Betreuungsgerichts.
 
-Weitere Informationen zur Patientenverfügung finden Sie [hier](https://www.vorsorgeregister.de/hilfe/vorsorgeangelegenheiten/die-patientenverfuegung).
+Weitere Informationen zur Patientenverfügung finden Sie [auf den Hilfeseiten des Zentralen Vorsorgeregisters](https://www.vorsorgeregister.de/hilfe/vorsorgeangelegenheiten/die-patientenverfuegung).
 
 ## Formfragen
 Die Erteilung einer Vollmacht unterliegt keinem rechtlichen Formzwang, d.h. eine Vollmacht kann sogar mündlich wirksam erteilt werden, wobei eine Bevollmächtigung aus praktischen Gründen, nämlich zu Nachweiszwecke, aber regelmäßig schriftlich erfolgt. Auch für eine Patientenverfügung genügt eigentlich die einfache Schriftform.
@@ -46,4 +46,4 @@ Schließlich können von einer notariellen Urkunde, deren Urschrift beim Notar v
 ## Registrierung
 Es besteht die Möglichkeit, die vorbeschriebenen Vorsorgemaßnahmen im Zentralen Vorsorgeregister der Bundesnotarkammer (ZVR) registrieren zu lassen. Zweck dieser Registrierung ist, dass bei Betreuungsbedarf Rücksicht darauf genommen wird, dass der Betroffene bereits selbst Vorsorge getroffen hat. Hierzu müssen die Betreuungsgerichte das Register einsehen und bei Bedarf Kontakt zu den registrierten Vertrauenspersonen aufnehmen. Falls gewünscht, führen wir die Registrierung für Sie durch.
 
-Nähere Informationen zum ZVR finden Sie [hier](https://www.vorsorgeregister.de/).
+Nähere Informationen finden Sie [auf der Website des Zentralen Vorsorgeregisters](https://www.vorsorgeregister.de/).

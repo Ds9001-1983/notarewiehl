@@ -6,10 +6,10 @@ import iconStandort from '../assets/icons/icon-standort.png';
 import iconZeiten from '../assets/icons/icon-oeffnungszeiten.png';
 ---
 
-<div class="kontakt-cards">
-  <div class="kcard">
+<div class="kontakt-cards" data-reveal>
+  <div class="kcard" data-reveal-item>
     <span class="kcard__icon"><Image src={iconStandort} alt="" width={40} height={40} /></span>
-    <h3 class="kcard__title">Standort</h3>
+    <h2 class="kcard__title">Standort</h2>
     <address>
       {kontakt.kanzlei}<br />
       {kontakt.strasse}<br />
@@ -17,9 +17,9 @@ import iconZeiten from '../assets/icons/icon-oeffnungszeiten.png';
     </address>
   </div>
 
-  <div class="kcard">
+  <div class="kcard" data-reveal-item>
     <span class="kcard__icon"><Image src={iconTelefon} alt="" width={40} height={40} /></span>
-    <h3 class="kcard__title">Telefon &amp; E-Mail</h3>
+    <h2 class="kcard__title">Telefon &amp; E-Mail</h2>
     <p>
       <a href={kontakt.telefonLink}>{kontakt.telefonAnzeige}</a><br />
       <span class="muted">Fax: {kontakt.faxAnzeige}</span><br />
@@ -27,9 +27,9 @@ import iconZeiten from '../assets/icons/icon-oeffnungszeiten.png';
     </p>
   </div>
 
-  <div class="kcard">
+  <div class="kcard" data-reveal-item>
     <span class="kcard__icon"><Image src={iconZeiten} alt="" width={40} height={40} /></span>
-    <h3 class="kcard__title">Telefonzeiten</h3>
+    <h2 class="kcard__title">Telefonzeiten</h2>
     <dl>
       {kontakt.telefonzeiten.map((z) => (
         <>

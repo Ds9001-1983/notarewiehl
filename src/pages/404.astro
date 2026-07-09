@@ -27,8 +27,52 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     font-size: clamp(3rem, 10vw, 6rem);
     color: var(--c-primary-200);
     line-height: 1;
+    animation: nf-rise 500ms var(--ease-out) both;
   }
-  .nf h1 { margin-bottom: var(--sp-4); }
-  .nf p { color: var(--text-secondary); margin-bottom: var(--sp-5); }
-  .nf__links { display: flex; flex-wrap: wrap; gap: var(--sp-4); justify-content: center; }
+  .nf h1 {
+    margin-bottom: var(--sp-4);
+    animation: nf-rise 500ms var(--ease-out) 100ms both;
+  }
+  .nf h1::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: var(--sp-4) auto 0;
+    background: var(--accent);
+    border-radius: 2px;
+    animation: nf-draw 500ms var(--ease-out) 350ms both;
+  }
+  .nf p {
+    color: var(--text-secondary);
+    margin-bottom: var(--sp-5);
+    animation: nf-rise 500ms var(--ease-out) 200ms both;
+  }
+  .nf__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-4);
+    justify-content: center;
+    animation: nf-rise 500ms var(--ease-out) 300ms both;
+  }
+
+  /* Einblenden wie PageHead; Reduced Motion springt via globalen Kill in den Endzustand */
+  @keyframes nf-rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes nf-draw {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
 </style>

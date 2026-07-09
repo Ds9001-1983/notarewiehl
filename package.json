@@ -11,7 +11,9 @@
     "astro": "astro",
     "check": "astro check",
     "fetch:assets": "bash scripts/fetch-assets.sh",
-    "migrate": "node scripts/migrate.mjs"
+    "migrate": "node scripts/migrate.mjs",
+    "a11y": "node scripts/a11y-check.mjs",
+    "verify": "npm run build && npm run a11y"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -25,6 +27,7 @@
     "@types/turndown": "^5.0.6",
     "axe-core": "^4.12.0",
     "cheerio": "^1.2.0",
+    "playwright": "^1.49.0",
     "turndown": "^7.2.4",
     "turndown-plugin-gfm": "^1.0.2",
     "typescript": "^6.0.3"

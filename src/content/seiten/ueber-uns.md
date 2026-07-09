@@ -3,7 +3,7 @@ title: "Über uns"
 description: "Notar"
 ---
 ## DIE NOTARE
-![](../../assets/images/portrait-kasper.png)
+![Porträtfoto von Notar Dr. Tim Kasper](../../assets/images/portrait-kasper.png)
 
 ### DR. TIM KASPER
 
@@ -29,7 +29,7 @@ Ich verwahre die Akten, Bücher und Urkunden der folgenden früheren Amtsinhaber
 
 -   Dr. Friedrich Wilhelm Berndorff, Notar in Wiehl vom 01.01.1946 bis 03.07.1951.
 
-![](../../assets/images/portrait-scholz.png)
+![Porträtfoto von Notar Philip Scholz](../../assets/images/portrait-scholz.png)
 
 ### PHILIP SCHOLZ
 
@@ -71,7 +71,7 @@ Büroorganisation
 
 (insb. Buchhaltung)
 
- Frau HERMONI
+### Frau HERMONI
 
 Notarfachassistentin
 
@@ -133,8 +133,8 @@ Auszubildende
 
 Auszubildende
 
-Frau HEINRICHS
+### Frau HEINRICHS
 
 Archivverwaltung
 
-**Wir suchen jederzeit Verstärkung (Stand: Januar 2026): Nähere Informationen finden Sie [hier](/KARRIERE/).**
+**Wir suchen jederzeit Verstärkung (Stand: Januar 2026): Nähere Informationen finden Sie [auf unserer Karriereseite](/KARRIERE/).**

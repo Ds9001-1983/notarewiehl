@@ -32,6 +32,16 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-subtle);
+    transition: box-shadow var(--dur-fast) var(--ease-out);
+  }
+  /* Gold-Passepartout: dezenter Offset-Rahmen über dem Kartenbild */
+  .karte__link::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--c-accent-400);
+    border-radius: calc(var(--r-lg) - 6px);
+    pointer-events: none;
   }
   .karte__link img {
     width: 100%;
@@ -39,8 +49,13 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
     display: block;
     transition: transform var(--dur-slow) var(--ease-out);
   }
-  .karte__link:hover img {
-    transform: scale(1.03);
+  .karte__link:hover,
+  .karte__link:focus-visible {
+    box-shadow: var(--shadow-md);
+  }
+  .karte__link:hover img,
+  .karte__link:focus-visible img {
+    transform: scale(1.02);
   }
   .karte__badge {
     position: absolute;
@@ -61,6 +76,7 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
     color: var(--text-muted);
   }
   @media (prefers-reduced-motion: reduce) {
-    .karte__link:hover img { transform: none; }
+    .karte__link:hover img,
+    .karte__link:focus-visible img { transform: none; }
   }
 </style>

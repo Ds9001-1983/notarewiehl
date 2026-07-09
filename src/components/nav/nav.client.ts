@@ -2,7 +2,7 @@
    kompatibel mit Astro View Transitions (DOM-Swaps). Einmalig gebunden. */
 
 const D = document;
-const desktop = () => window.matchMedia('(min-width: 1080px)').matches;
+const desktop = () => window.matchMedia('(min-width: 1280px)').matches;
 
 const $header = () => D.querySelector<HTMLElement>('[data-header]');
 const $drawer = () => D.querySelector<HTMLElement>('[data-drawer]');
@@ -137,9 +137,17 @@ D.addEventListener('keydown', (e) => {
   }
 });
 
-/* ---------- Scroll-Schatten ---------- */
+/* ---------- Scroll-Schatten & kondensierter Header ---------- */
+let condensed = false;
 function onScroll() {
-  $header()?.classList.toggle('is-scrolled', window.scrollY > 4);
+  const h = $header();
+  if (!h) return;
+  const y = window.scrollY;
+  h.classList.toggle('is-scrolled', y > 4);
+  // Hysterese gegen Flackern: ab 120 kondensieren, erst unter 60 wieder lösen
+  if (y > 120) condensed = true;
+  else if (y < 60) condensed = false;
+  h.classList.toggle('is-condensed', condensed);
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();

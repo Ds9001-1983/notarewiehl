@@ -5,7 +5,7 @@ description: "Unsere Amtstätigkeit ist gebührenpflichtig."
 ## Grundsatz der Gebührenpflicht und gesetzliche Einordnung
 Unsere Amtstätigkeit ist gebührenpflichtig.
 
-Das gilt nicht nur für die Durchführung von Beurkundungen und Beglaubigungen (siehe hier), sondern auch für deren Vorbereitung (durch Erstellung eines Urkundenentwurfs, siehe hier) oder eine individuelle Beratung (nähere Informationen hier).
+Das gilt nicht nur für die Durchführung von Beurkundungen und Beglaubigungen (siehe [Beurkundungsverfahren](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/weiteres-Verfahren-mit-Beurkundung/)), sondern auch für deren Vorbereitung (durch Erstellung eines Urkundenentwurfs, siehe [Verfahrensbeendigung ohne Beurkundung](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/weiteres-Verfahren-ohne-Beurkundung/)) oder eine individuelle Beratung (nähere Informationen unter [isolierte Beratung](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/isolierte-Beratung/)).
 
 Die Notarkosten sind bundesweit einheitlich im Gerichts- und Notarkostengesetz (GNotKG) geregelt.
 
@@ -21,9 +21,9 @@ Da Rechtsgrundlage für die Notarkosten eine gesetzliche Regelung ist, entsteht 
 Die Beteiligten sind verpflichtet, bei der Ermittlung des Geschäftswerts vollständig und wahrheitsgemäß mitzuwirken. Unrichtige oder unvollständige Angaben können dazu führen, dass der Wert geschätzt werden muss. Diese Schätzung kann sich für Beteiligte, die ihre gesetzliche Mitwirkungspflicht verletzen, nachteilig auf die Gebührenberechnung auswirken. \[[§ 95 GNotKG](https://www.gesetze-im-internet.de/gnotkg/__95.html)\]
 
 ## Verhältnis von Beratung, Entwurf und Beurkundung
-Die Gebühr für eine Beurkundung umfasst regelmäßig auch die hierfür erforderliche Beratung sowie die Erstellung des Urkundenentwurfs (siehe [hier](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/weiteres-Verfahren-mit-Beurkundung/)).
+Die Gebühr für eine Beurkundung umfasst regelmäßig auch die hierfür erforderliche Beratung sowie die Erstellung des Urkundenentwurfs (Näheres unter [Beurkundungsverfahren](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/weiteres-Verfahren-mit-Beurkundung/)).
 
-Eine gesonderte Gebühr für Beratung oder Entwurfsarbeiten fällt daher grundsätzlich nur dann an, wenn aufgrund der Beratung keine weitergehende gebührenpflichtige Amtstätigkeit folgt (siehe [hier](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/isolierte-Beratung/)) oder wenn ein Beurkundungsverfahren vorzeitig beendet wird (siehe [hier](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/weiteres-Verfahren-ohne-Beurkundung/)).
+Eine gesonderte Gebühr für Beratung oder Entwurfsarbeiten fällt daher grundsätzlich nur dann an, wenn aufgrund der Beratung keine weitergehende gebührenpflichtige Amtstätigkeit folgt (siehe [isolierte Beratung](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/isolierte-Beratung/)) oder wenn ein Beurkundungsverfahren vorzeitig beendet wird (siehe [vorzeitige Verfahrensbeendigung](/LEISTUNGEN/Beratung-und-weiteres-Verfahren/weiteres-Verfahren-ohne-Beurkundung/)).
 
 ## Praktische Konsequenz und Ziel der Tätigkeit
 Individuelle notarielle Beratung sowie die Erstellung von Urkundenentwürfen sind daher nicht kostenfrei, wenn kein Beurkundungsauftrag erteilt wird oder das Verfahren ohne Beurkundung endet.

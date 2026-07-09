@@ -8,7 +8,7 @@ interface Props {
 const { title, lead } = Astro.props;
 ---
 
-<section class="page-head">
+<section class="page-head" transition:name="page-head">
   <div class="container">
     <Breadcrumb />
     <h1>{title}</h1>
@@ -25,6 +25,7 @@ const { title, lead } = Astro.props;
   .page-head h1 {
     margin-top: var(--sp-4);
     max-width: 24ch;
+    animation: page-head-rise 500ms var(--ease-out) both;
   }
   .page-head h1::after {
     content: '';
@@ -34,11 +35,34 @@ const { title, lead } = Astro.props;
     margin-top: var(--sp-4);
     background: var(--accent);
     border-radius: 2px;
+    transform-origin: left;
+    animation: page-head-draw 500ms var(--ease-out) 250ms both;
   }
   .page-head__lead {
     margin-top: var(--sp-4);
     max-width: var(--measure-narrow);
     font-size: var(--fs-lead);
     color: var(--text-secondary);
+    animation: page-head-rise 500ms var(--ease-out) 150ms both;
+  }
+
+  /* Einblenden beim Seitenaufruf; Reduced Motion springt via globalen Kill in den Endzustand */
+  @keyframes page-head-rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes page-head-draw {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
   }
 </style>

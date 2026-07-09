@@ -25,6 +25,11 @@
   padding-bottom: 0.3em;
   border-bottom: 1px solid var(--border-subtle);
 }
+/* Zwischenüberschriften kompakt halten (Markdown nutzt ### als dritte Ebene) */
+.prose h3 {
+  font-size: clamp(1.125rem, 1.02rem + 0.4vw, 1.25rem);
+  line-height: var(--lh-snug);
+}
 .prose h2 + *,
 .prose h3 + *,
 .prose h4 + * {
@@ -41,12 +46,13 @@
   font-weight: 600;
 }
 
-.prose a {
+/* :not(.btn): Buttons im Fließtext behalten ihre eigene Textfarbe (Kontrast!) */
+.prose a:not(.btn) {
   color: var(--text-link);
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
-.prose a:hover {
+.prose a:not(.btn):hover {
   color: var(--text-link-hover);
 }
 

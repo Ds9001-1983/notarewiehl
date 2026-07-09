@@ -19,6 +19,7 @@ import haus from '@/assets/images/haus-schmitz.jpg';
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <p class="hero__eyebrow">Notariat in Wiehl</p>
+      <span class="hero__rule" aria-hidden="true"></span>
       <h1 class="hero__title">„Wir sind für Sie da&nbsp;– fachkundig, pflichtbewusst und serviceorientiert.“</h1>
       <p class="hero__sub">Ihre Notare in Wiehl – Dr.&nbsp;Tim&nbsp;Kasper &amp; Philip&nbsp;Scholz.</p>
       <div class="hero__cta">
@@ -31,7 +32,7 @@ import haus from '@/assets/images/haus-schmitz.jpg';
   <!-- Begrüßung -->
   <section class="section">
     <div class="container welcome" data-reveal>
-      <div class="welcome__text">
+      <div class="welcome__text" data-reveal-item>
         <p class="eyebrow">Herzlich willkommen</p>
         <h2>Herzlich willkommen bei den Notaren in Wiehl</h2>
         <p>
@@ -49,7 +50,7 @@ import haus from '@/assets/images/haus-schmitz.jpg';
           <a class="btn btn--ghost" href="/LEISTUNGEN/Notarkosten/">Notarkosten</a>
         </div>
       </div>
-      <div class="welcome__media">
+      <div class="welcome__media" data-reveal-item>
         <Image src={haus} alt="Kanzleigebäude der Notare in Wiehl, Hauptstraße 41" widths={[480, 720, 960]} sizes="(min-width: 900px) 440px, 100vw" />
       </div>
     </div>
@@ -63,9 +64,10 @@ import haus from '@/assets/images/haus-schmitz.jpg';
   </section>
 
   <!-- Kontakt-Streifen -->
-  <section class="section section--inverse on-dark">
+  <section class="section section--inverse on-dark kstrip-section">
+    <span class="kstrip-section__mark" aria-hidden="true">§</span>
     <div class="container kstrip" data-reveal>
-      <div class="kstrip__intro">
+      <div class="kstrip__intro" data-reveal-item>
         <p class="eyebrow">Kontakt</p>
         <h2>Gerne nehmen wir uns Zeit für Sie.</h2>
         <p>Rufen Sie uns an oder schreiben Sie uns – wir koordinieren Ihren Termin.</p>
@@ -74,7 +76,7 @@ import haus from '@/assets/images/haus-schmitz.jpg';
           <a class="btn btn--on-dark" href="/KONTAKT/">Anfahrt &amp; Kontakt</a>
         </div>
       </div>
-      <div class="kstrip__hours">
+      <div class="kstrip__hours" data-reveal-item>
         <h3>Telefonzeiten</h3>
         <dl>
           {kontakt.telefonzeiten.map((z) => (
@@ -99,28 +101,42 @@ import haus from '@/assets/images/haus-schmitz.jpg';
     min-height: clamp(440px, 64vh, 660px);
     color: #fff;
     isolation: isolate;
+    overflow: hidden;
   }
   .hero__media {
     position: absolute;
     inset: 0;
     z-index: -2;
   }
+  /* Ken-Burns: nur transform, LCP-Bild bleibt sofort sichtbar */
   .hero__media :global(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 35%;
+    animation: heroZoom 20s linear forwards;
   }
   .hero__overlay {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(
-      105deg,
-      rgba(15, 45, 64, 0.92) 0%,
-      rgba(20, 60, 85, 0.78) 45%,
-      rgba(20, 60, 85, 0.35) 100%
-    );
+    background:
+      radial-gradient(60% 55% at 18% 100%, rgba(15, 45, 64, 0.4), rgba(15, 45, 64, 0) 100%),
+      linear-gradient(
+        105deg,
+        rgba(15, 45, 64, 0.92) 0%,
+        rgba(20, 60, 85, 0.78) 45%,
+        rgba(20, 60, 85, 0.55) 100%
+      );
+  }
+  /* Papier-Textur, statisch */
+  .hero__overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   .hero__content {
     padding-block: var(--sp-8);
@@ -132,23 +148,59 @@ import haus from '@/assets/images/haus-schmitz.jpg';
     text-transform: uppercase;
     color: var(--c-accent-300);
     margin-bottom: var(--sp-4);
+    animation: heroRise 600ms var(--ease-out) 150ms both;
+  }
+  .hero__rule {
+    display: block;
+    width: 72px;
+    height: 2px;
+    margin-bottom: var(--sp-4);
+    background: linear-gradient(90deg, var(--c-accent-500), var(--c-accent-300));
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: ruleDraw 600ms var(--ease-out) 300ms both;
   }
   .hero__title {
     color: #fff;
     max-width: 18ch;
     font-size: var(--fs-display);
+    text-shadow: 0 1px 2px rgba(15, 45, 64, 0.35);
+    animation: heroRise 700ms var(--ease-out) 350ms both;
   }
   .hero__sub {
     margin-top: var(--sp-4);
     max-width: 42ch;
     font-size: var(--fs-lead);
     color: var(--text-on-dark);
+    text-shadow: 0 1px 2px rgba(15, 45, 64, 0.35);
+    animation: heroRise 700ms var(--ease-out) 550ms both;
   }
   .hero__cta {
     display: flex;
     flex-wrap: wrap;
     gap: var(--sp-4);
     margin-top: var(--sp-6);
+    animation: heroRise 700ms var(--ease-out) 700ms both;
+  }
+
+  @keyframes heroRise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+  @keyframes ruleDraw {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes heroZoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.055);
+    }
   }
 
   /* Welcome */
@@ -161,14 +213,63 @@ import haus from '@/assets/images/haus-schmitz.jpg';
   .welcome__text h2 { margin-bottom: var(--sp-4); }
   .welcome__text p { color: var(--text-secondary); margin-bottom: var(--sp-4); max-width: 56ch; }
   .welcome__actions { display: flex; flex-wrap: wrap; gap: var(--sp-4); margin-top: var(--sp-5); }
+  .welcome__media {
+    position: relative;
+    isolation: isolate;
+  }
+  /* Gold-Offset-Rahmen, statisch */
+  .welcome__media::after {
+    content: '';
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    border: 1px solid var(--c-accent-400);
+    border-radius: var(--r-lg);
+    z-index: -1;
+  }
   .welcome__media :global(img) {
     width: 100%;
     height: auto;
     border-radius: var(--r-lg);
     box-shadow: var(--shadow-md);
   }
+  /* Sanfter Scroll-Parallax – nur wo unterstützt und Motion erwünscht */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .welcome__media :global(img) {
+        animation: welcomeParallax linear both;
+        animation-timeline: view();
+        animation-range: entry 10% exit 90%;
+      }
+    }
+  }
+  @keyframes welcomeParallax {
+    from {
+      transform: translateY(16px);
+    }
+    to {
+      transform: translateY(-16px);
+    }
+  }
 
   /* Kontakt-Streifen */
+  .kstrip-section {
+    position: relative;
+    overflow: hidden;
+  }
+  /* dekoratives §-Wasserzeichen hinter dem Inhalt */
+  .kstrip-section__mark {
+    position: absolute;
+    right: 2%;
+    bottom: -0.22em;
+    z-index: -1;
+    font-family: var(--font-serif);
+    font-size: 18rem;
+    font-weight: 600;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.04);
+    pointer-events: none;
+    user-select: none;
+  }
   .kstrip {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
@@ -191,8 +292,21 @@ import haus from '@/assets/images/haus-schmitz.jpg';
   .kstrip__note { margin-top: var(--sp-4); font-size: var(--fs-small); color: var(--c-accent-300); }
 
   @media (max-width: 860px) {
+    /* mobil spannt der Text die volle Breite → stärker abdunkeln */
+    .hero__overlay {
+      background:
+        radial-gradient(60% 55% at 18% 100%, rgba(15, 45, 64, 0.4), rgba(15, 45, 64, 0) 100%),
+        linear-gradient(105deg, rgba(15, 45, 64, 0.92) 0%, rgba(20, 60, 85, 0.85) 100%);
+    }
     .welcome,
     .kstrip { grid-template-columns: 1fr; }
     .welcome__media { order: -1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Zoom-Endzustand ist nicht der Ruhezustand → Animation komplett aus */
+    .hero__media :global(img) {
+      animation: none;
+    }
   }
 </style>

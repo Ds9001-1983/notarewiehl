@@ -14,4 +14,4 @@ description: "Der Eingang befindet sich auf der Gebäuderückseite im Bereich Wi
 
 -   Auch können Sie - wie bisher - am Weiherplatz parken, da unser neuer Standort nur ca. 200 m von unseren bisherigen Büroräumlichkeiten entfernt ist.
 
-![](../../assets/images/kartenausschnitt.png)
+![Luftbild des Wiehler Ortskerns: Gelb gestrichelte Fußwege führen von der Weiher-Passage und von der Grundschule zum rückseitigen Eingang des Notariats im Bereich Wiehltaler Hof; Rathaus, evangelische Kirche und Bücherei sind als Orientierungspunkte beschriftet.](../../assets/images/kartenausschnitt.png)
