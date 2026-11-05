@@ -174,6 +174,15 @@ async function clickFunnelNext(page) {
     .click({ timeout: FUNNEL_TIMEOUT });
 }
 
+// Warten, bis Funnel-Schritt n sichtbar ist und seine Einblend-Animation
+// (.is-entering, opacity 0 → 1) beendet hat. Sonst misst axe den Kontrast
+// mitten im Fade und meldet zufällig color-contrast.
+async function waitForFunnelStep(page, n) {
+  const step = `fieldset[data-step="${n}"]`;
+  await page.waitForSelector(`${step}:not([hidden])`, { timeout: FUNNEL_TIMEOUT });
+  await page.waitForSelector(`${step}.is-entering`, { state: 'detached', timeout: FUNNEL_TIMEOUT });
+}
+
 // Bewerbungs-Funnel auf /KARRIERE/ durchklicken und jeden Zustand erneut mit
 // axe prüfen (Fehlerzustand, Schritte 2–4). Fehlende Selektoren (Funnel evtl.
 // noch nicht gebaut) oder Timeouts sind nur Warnungen – kein Abbruch.
@@ -214,16 +223,16 @@ async function checkFunnel(page, pagePath, totals) {
       });
     }
     await clickFunnelNext(page);
-    await page.waitForSelector('fieldset[data-step="2"]:not([hidden])', { timeout: FUNNEL_TIMEOUT });
+    await waitForFunnelStep(page, 2);
     report(`${pagePath} · Desktop, Funnel Schritt 2`, await runAxe(page), totals);
 
     await clickFunnelNext(page);
-    await page.waitForSelector('fieldset[data-step="3"]:not([hidden])', { timeout: FUNNEL_TIMEOUT });
+    await waitForFunnelStep(page, 3);
     report(`${pagePath} · Desktop, Funnel Schritt 3`, await runAxe(page), totals);
 
     await page.locator('#bf-name').fill('Testperson Müller', { timeout: FUNNEL_TIMEOUT });
     await clickFunnelNext(page);
-    await page.waitForSelector('fieldset[data-step="4"]:not([hidden])', { timeout: FUNNEL_TIMEOUT });
+    await waitForFunnelStep(page, 4);
     report(`${pagePath} · Desktop, Funnel Schritt 4`, await runAxe(page), totals);
   } catch (err) {
     console.warn(`   WARNUNG Funnel-Schrittprüfung fehlgeschlagen (${pagePath}): ${err.message}`);
