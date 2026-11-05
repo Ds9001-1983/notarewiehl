@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "missing": [{ "type": "host", "value": { "eq": "www.notare-wiehl.de" } }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}
